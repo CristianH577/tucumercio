@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@layer base {
+  @font-face {
+    font-family: "monserrat";
+    src: url("./assets/fonts/Montserrat-Light.otf");
+    font-display: swap;
+  }
+}
+
+@theme {
+  --breakpoint-xs: 360px;
+
+  /* --color-primary: #fdcb2f; */
+  --color-primary: rgb(253 203 47);
+  --color-secondary-dark: #2e2e2e;
+  --color-secondary-ligth: #fff7d6;
+  --color-neutral: #1c1c1c;
+  /* --color-tertiary: #4ba3c7; */
+  --color-tertiary: rgb(75, 163, 199);
+  --color-success: #4caf50;
+  --color-warning: #e8505b;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+main {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1200px;
+  place-self: center;
+}
+
+.SliderCategorie {
+  .swiper {
+    position: unset;
+  }
+
+  .swiper-button-prev {
+    left: 0;
+  }
+  .swiper-button-next {
+    right: 0;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: var(--color-tertiary);
+    &:hover {
+      color: var(--color-warning);
+    }
+  }
+
+  .swiper-pagination-bullet:hover {
+    background-color: var(--color-warning);
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--color-primary);
+  }
+}

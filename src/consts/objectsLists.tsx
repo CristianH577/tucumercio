@@ -92,7 +92,7 @@ import ReceiptIcon from "@mui/icons-material/Receipt";
 // import ContentCutIcon from "@mui/icons-material/ContentCut";
 // import LocalLaundryServiceIcon from "@mui/icons-material/LocalLaundryService";
 
-export const OBJ_CATEGORIES_: TypeObjCategorie = {
+export const OBJ_CATEGORIES: TypeObjCategorie = {
   products: {
     label: "Tiendas",
     subs: {

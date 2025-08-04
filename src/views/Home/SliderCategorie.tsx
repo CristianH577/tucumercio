@@ -1,4 +1,4 @@
-import { OBJ_CATEGORIES_ } from "../../consts/objectsLists";
+import { OBJ_CATEGORIES } from "../../consts/objectsLists";
 
 import { Button } from "@mui/material";
 import { Link } from "react-router";
@@ -21,7 +21,7 @@ export default function SliderCategorie({
   className = "",
   id = "products",
 }: IntfProps) {
-  const data = OBJ_CATEGORIES_[id];
+  const data = OBJ_CATEGORIES[id];
   if (!data) {
     return (
       <article className="w-full h-52 border-8 border-primary rounded-md flex items-center justify-center uppercase my-2">

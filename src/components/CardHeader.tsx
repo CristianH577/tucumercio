@@ -1,4 +1,4 @@
-import { OBJ_CATEGORIES_, OBJ_TYPES_STORE } from "../consts/objectsLists";
+import { OBJ_CATEGORIES, OBJ_TYPES_STORE } from "../consts/objectsLists";
 import type { TypeItemDb } from "../consts/types";
 import Image from "./Image";
 
@@ -59,9 +59,9 @@ export default function CardHeader({
   },
 }: InterfaceProps) {
   const categorie =
-    item.categorie[0] in OBJ_CATEGORIES_
-      ? OBJ_CATEGORIES_[item.categorie[0]]
-      : OBJ_CATEGORIES_.products;
+    item.categorie[0] in OBJ_CATEGORIES
+      ? OBJ_CATEGORIES[item.categorie[0]]
+      : OBJ_CATEGORIES.products;
 
   const sub =
     item.categorie[1] && categorie.subs && item.categorie[1] in categorie.subs

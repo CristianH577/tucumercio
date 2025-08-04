@@ -107,6 +107,6 @@ export type TypeFiltersValues = {
 
 export type TypeFaqsItem = {
   quest: string;
-  answer: string | React.ReactNode;
+  answer: string;
   tags?: string[];
 };

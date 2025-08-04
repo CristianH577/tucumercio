@@ -22,22 +22,24 @@ export const LIST_FAQS_CLIENT: TypeFaqsItem[] = [
 export const LIST_FAQS_COMMERCE: TypeFaqsItem[] = [
   {
     quest: "Como aparezco en el sitio",
-    answer: (
-      <>
-        Solamente tiene que completar este{" "}
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Ir al formulario"
-          className="text-warning font-semibold hover:underline"
-        >
-          formulario
-        </a>{" "}
-        con los datos del negocio y esperar a que se corrobore la información y
-        se agregue al sitio
-      </>
-    ),
+    answer:
+      "Solamente tiene que completar el formulario(link al final de la página) con los datos del negocio y esperar a que se corrobore la información y se agregue al sitio",
+    // answer: (
+    //   <>
+    //     Solamente tiene que completar este{" "}
+    //     <a
+    //       href="#"
+    //       target="_blank"
+    //       rel="noopener noreferrer"
+    //       title="Ir al formulario"
+    //       className="text-warning font-semibold hover:underline"
+    //     >
+    //       formulario
+    //     </a>{" "}
+    //     con los datos del negocio y esperar a que se corrobore la información y
+    //     se agregue al sitio
+    //   </>
+    // ),
   },
   {
     quest: "Que costo tiene estar en el sitio",

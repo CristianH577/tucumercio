@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 
-import { OBJ_CATEGORIES_ } from "../../consts/objectsLists";
+import { OBJ_CATEGORIES } from "../../consts/objectsLists";
 import type { TypeObjCategorie } from "../../consts/types";
 
 import {
@@ -111,5 +111,5 @@ export default function ListCategories({ values = [], onSelect }: IntfProps) {
     );
   };
 
-  return Lists(OBJ_CATEGORIES_, []);
+  return Lists(OBJ_CATEGORIES, []);
 }

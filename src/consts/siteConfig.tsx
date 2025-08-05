@@ -15,12 +15,12 @@ export const LINKS_NAV: TypeRoute[] = [
 ];
 
 export const LIKS_CONTACT = [
-  {
-    id: "wp",
-    href: "https://api.whatsapp.com/send?phone=543813545903",
-    label: "WhatsApp",
-    icon: WhatsAppIcon,
-  },
+  // {
+  //   id: "wp",
+  //   href: "https://api.whatsapp.com/send?phone=543813545903",
+  //   label: "WhatsApp",
+  //   icon: WhatsAppIcon,
+  // },
   {
     id: "ig",
     href: "https://www.instagram.com/verde_ave/",

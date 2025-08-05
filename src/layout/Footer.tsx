@@ -127,7 +127,7 @@ export default function Footer() {
             </ul>
           </motion.article>
 
-          <Divider variant="middle" className="sm:hidden" />
+          {/* <Divider variant="middle" className="sm:hidden" />
           <Divider
             className="hidden sm:block"
             orientation="vertical"
@@ -139,7 +139,7 @@ export default function Footer() {
             variants={motion_variant_article}
           >
             <img src={qrImg} alt="QR: chat de Whatsapp" className="w-28" />
-          </motion.div>
+          </motion.div> */}
         </section>
 
         <Divider variant="middle" />

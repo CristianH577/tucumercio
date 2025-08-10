@@ -7,7 +7,7 @@ import { Link } from "react-router";
 
 import Logo from "../components/Logo";
 
-import qrImg from "../assets/imgs/qr_nokia.webp";
+// import qrImg from "../assets/imgs/qr_nokia.webp";
 
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 

@@ -1,6 +1,6 @@
 import type { TypeFiltersValues, TypeRoute } from "./types";
 
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import ReportGmailerrorredOutlinedIcon from "@mui/icons-material/ReportGmailerrorredOutlined";

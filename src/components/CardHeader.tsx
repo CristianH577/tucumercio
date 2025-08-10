@@ -37,7 +37,8 @@ const sizes: {
 
 interface InterfaceProps {
   item: TypeItemDb;
-  classes?: { img?: string };
+  className?: string;
+  classes?: { img?: string; text?: string };
   size?: keyof typeof sizes;
   slotsProps?: {
     img?: {
@@ -49,7 +50,8 @@ interface InterfaceProps {
 
 export default function CardHeader({
   item,
-  classes = { img: "" },
+  className = "",
+  classes = { img: "", text: "" },
   size = "sm",
   slotsProps = {
     img: {
@@ -83,7 +85,11 @@ export default function CardHeader({
   };
 
   return (
-    <div className="xs:flex gap-2 max-xs:text-center min-h-[100px]">
+    <div
+      className={
+        "xs:flex gap-2 min-h-[100px]" + (className ? " " + className : "")
+      }
+    >
       <Image
         width={slotsProps.img?.width}
         height={slotsProps.img?.height}
@@ -100,7 +106,12 @@ export default function CardHeader({
         }
       />
 
-      <div className="flex flex-col gap-0.5">
+      <div
+        className={
+          "flex flex-col gap-0.5 max-xs:items-center" +
+          (classes.text ? " " + classes.text : "")
+        }
+      >
         <span {...props_subtitle}>{categorie.label}</span>
         <span {...props_subtitle}>
           {type.icon && <type.icon fontSize={size_.icon} />}

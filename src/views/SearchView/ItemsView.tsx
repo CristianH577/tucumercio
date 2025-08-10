@@ -48,7 +48,7 @@ export default function ItemsView({
     );
 
   return (
-    <section className="grid xs:grid-cols-[repeat(auto-fit,_minmax(200px,280px))] sm:grid-cols-[repeat(auto-fit,_minmax(200px,320px))] gap-4 md:gap-6 lg:gap-8 justify-center mt-4">
+    <section className="grid xs:grid-cols-[repeat(auto-fit,_minmax(220px,280px))] sm:grid-cols-[repeat(auto-fit,_minmax(200px,320px))] gap-4 md:gap-6 lg:gap-8 xs:justify-center mt-4">
       {items.map((item) => (
         <MotionLink
           key={item.id}

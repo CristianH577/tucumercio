@@ -134,7 +134,7 @@ export default function DrawerFilters({
 
       <motion.section
         data-slot="body"
-        className="py-4 flex flex-col gap-3 overflow-y-auto"
+        className="py-4 flex flex-col gap-3 overflow-x-hidden overflow-y-auto"
         variants={{
           visible: {
             transition: {

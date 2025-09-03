@@ -45,7 +45,7 @@ export default function Home() {
         />
       </section>
 
-      <section className="flex flex-col max-md:items-center max-md:text-center px-2 sm:px-4 sm:flex-row-reverse justify-center sm:gap-8">
+      <section className="flex flex-col max-md:items-center max-md:text-center px-2 sm:px-4 sm:flex-row-reverse justify-center sm:gap-8 sm:py-12">
         <h1 className="font-bold text-6xl md:text-7xl max-w-96 py-8 md:py-16">
           Encuentre negocios en su localidad
         </h1>

@@ -415,8 +415,8 @@ export const OBJ_UBICATION: TypeObjList = {
   number: {
     label: "N°",
   },
-  desc: {
-    label: "Descripción",
+  references: {
+    label: "Referencias",
   },
 };
 export const OBJ_LOCALIDADES = {
@@ -439,7 +439,7 @@ export const OBJ_LOCALIDADES = {
   ybuena: "Yerba Buena",
 };
 
-export const OBJ_SCHEDULE = {
+export const OBJ_SCHEDULE: { [key: number]: string } = {
   1: "Lunes",
   2: "Martes",
   3: "Miércoles",

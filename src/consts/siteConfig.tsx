@@ -7,10 +7,12 @@ import ReportGmailerrorredOutlinedIcon from "@mui/icons-material/ReportGmailerro
 import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
 import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import LoginIcon from "@mui/icons-material/Login";
 
 export const LINKS_NAV: TypeRoute[] = [
   { id: "", label: "Inicio", icon: HouseOutlinedIcon },
   { id: "search", label: "Buscar", icon: SearchIcon },
+  { id: "login", label: "Iniciar sesión", icon: LoginIcon },
   { id: "faqs", label: "FAQs", icon: HelpOutlineOutlinedIcon },
 ];
 

@@ -19,22 +19,16 @@ import {
   Button,
   Checkbox,
   Divider,
-  Drawer,
-  FormControl,
   FormControlLabel,
   FormGroup,
   IconButton,
-  InputLabel,
-  MenuItem,
-  Select,
-  type SelectChangeEvent,
 } from "@mui/material";
-
-import ListCategories from "./ListCategories";
 
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
+import SelectCategorie from "../../components/SelectCategorie";
+import { Drawer, FormControl, FormLabel, Option, Select } from "@mui/joy";
 
 type TypeDrawerFilters = {
   isOpen: boolean;
@@ -66,29 +60,12 @@ export default function DrawerFilters({
   };
   const handleApply = () => {
     let href = getHrefSearch(filtersValuesTemp);
-    if (href) navigate(href);
+    navigate(href);
     onClose();
   };
 
-  const handleSelectCategorie = (categories: string[]) => {
-    let categories_ = categories;
-
-    if (categories.length === filtersValuesTemp.categories.length) {
-      const last = categories.length - 1;
-      if (categories[last] === filtersValuesTemp.categories[last]) {
-        categories_ = categories.slice(0, last);
-      }
-    }
-
-    setFiltersValuesTemp({
-      ...filtersValuesTemp,
-      categories: categories_,
-    });
-  };
-
-  const handleChangeSelect = (event: SelectChangeEvent<string>) => {
-    const value = event.target.value || "";
-    setFiltersValuesTemp({ ...filtersValuesTemp, ubication: value });
+  const handleChangeSelect = (_: any, val: string | null) => {
+    setFiltersValuesTemp({ ...filtersValuesTemp, ubication: val || "" });
   };
 
   const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -118,12 +95,9 @@ export default function DrawerFilters({
     <Drawer
       open={isOpen}
       onClose={onClose}
-      disableScrollLock
       anchor="right"
-      classes={{
-        paper: "w-full xs:!max-w-[325px] xs:rounded-s-lg",
-        // !bg-transparent backdrop-blur-lg !text-white
-        // !bg-gradient-to-l from-primary to-secondary-ligth
+      slotProps={{
+        root: { className: "w-full xs:!max-w-[325px] xs:rounded-s-lg" },
       }}
     >
       <h2 data-slot="header" className="font-semibold text-xl p-2">
@@ -146,32 +120,45 @@ export default function DrawerFilters({
         initial="hidden"
         animate="visible"
       >
-        <motion.article className="space-y-2" variants={variant_articles}>
-          <h3 className="px-2 font-semibold">Categorias</h3>
-          <ListCategories
-            values={filtersValuesTemp.categories}
-            onSelect={handleSelectCategorie}
+        <motion.article
+          className="flex flex-col gap-2 w-full px-2"
+          variants={variant_articles}
+        >
+          <h3 className="css-1ckvkg0-JoyFormLabel-root">Categoria</h3>
+          <SelectCategorie
+            selected={filtersValuesTemp.categories}
+            setSelected={(val: string[]) =>
+              setFiltersValuesTemp({ ...filtersValuesTemp, categories: val })
+            }
           />
         </motion.article>
 
         <Divider variant="middle" />
 
         <motion.article className="px-2" variants={variant_articles}>
-          <FormControl fullWidth>
-            <InputLabel id="department-select-label">Localidad</InputLabel>
+          <FormControl>
+            <FormLabel htmlFor="select-ubication" id="select-ubication-label">
+              Localidad
+            </FormLabel>
             <Select
-              labelId="department-select-label"
-              id="department-select"
-              label="Localidad"
               name="ubication"
-              value={filtersValuesTemp.ubication}
+              placeholder="Seleccione"
+              slotProps={{
+                button: {
+                  id: "select-ubication",
+                  "aria-labelledby": "select-ubication-label select-ubication",
+                },
+              }}
+              value={filtersValuesTemp.ubication || null}
               onChange={handleChangeSelect}
             >
-              <MenuItem value={undefined}>Todas</MenuItem>
+              <Option value="">
+                <em>Quitar</em>
+              </Option>
               {Object.entries(OBJ_LOCALIDADES).map(([key, label]) => (
-                <MenuItem key={key} value={key}>
+                <Option key={key} value={key}>
                   {label}
-                </MenuItem>
+                </Option>
               ))}
             </Select>
           </FormControl>

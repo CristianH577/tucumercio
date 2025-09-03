@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router";
 
 import Layout from "./layout/Layout";
 import NotFound from "./layout/NotFound";
+import FormsView from "./views/FormsView";
 
 const Home = lazy(() => import("./views/Home"));
 const SearchView = lazy(() => import("./views/SearchView"));
@@ -19,6 +20,7 @@ function App() {
     search: <SearchView />,
     itemView: <ItemView />,
     faqs: <Faqs />,
+    forms: <FormsView />,
   };
 
   const routes: TypeRoute[] = [
@@ -27,6 +29,11 @@ function App() {
       id: "itemView",
       href: "search/:id",
       label: "Vista de articulo",
+    },
+    {
+      id: "forms",
+      href: "forms",
+      label: "Formularios",
     },
   ];
 

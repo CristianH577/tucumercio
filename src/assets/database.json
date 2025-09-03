@@ -6,12 +6,7 @@
       "label": "Imanes Tucuman",
       "logo": true,
       "desc": "Tienda de imanes de neodimio, artículos magnéticos y otros. No hay local, pero puede retirar o ver los artículos en la dirección en el horario de atención con aviso previo.",
-      "schedule": {
-        "range": [
-          [1, 6],
-          [11, 21]
-        ]
-      },
+      "schedule": [[1, 6, 11, 21]],
       "type": "store",
       "items": [
         "Imanes de neodimio",
@@ -37,11 +32,11 @@
         "href": "https://www.facebook.com/profile.php?id=61560974355591"
       },
       "ig": {
-        "label": "@imanestucuman",
+        "label": "imanestucuman",
         "href": "https://www.instagram.com/imanestucuman/"
       },
       "x": {
-        "label": "@imanestucuman",
+        "label": "imanestucuman",
         "href": "https://x.com/imanestucuman"
       },
       "googleMaps": {
@@ -95,7 +90,7 @@
         "href": "https://verdeave.onrender.com/"
       },
       "ig": {
-        "label": "@verde_ave",
+        "label": "verde_ave",
         "href": "https://www.instagram.com/verde_ave/"
       }
     },
@@ -104,5 +99,419 @@
     },
     "paymentMethods": ["cash", "transfer", "mercadoPago", "paypal"],
     "tags": ["diseño"]
+  },
+  {
+    "id": 3,
+    "categorie": ["products", "businessIndustrial", "plomeriaGas"],
+    "info": {
+      "label": "Miotti Gas",
+      "logo": true,
+      "desc": "Todos los Repuestos para gas y agua, materiales de instalación, artefactos para el hogar, calderas y más!",
+      "type": "store",
+      "items": [
+        "Ornallas de cocina",
+        "Repuestos de horno eléctrico",
+        "Repuestos de cocina eléctrica",
+        "Repuestos de calefactor",
+        "Repuestos de termotanque",
+        "Repuestos de pileta"
+      ]
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3812075495"
+      },
+      "telephone": { "label": "3814331694" },
+      "ig": {
+        "label": "miottigas",
+        "link": "https://www.instagram.com/miottigas/"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Av. Manuel Belgrano",
+      "number": 1890
+    },
+    "attributes": ["physicalStore"]
+  },
+  {
+    "id": 4,
+    "categorie": ["products", "businessIndustrial"],
+    "info": {
+      "label": "TodoBulon",
+      "type": "store",
+      "items": ["Bulones", "Tornillos", "Herramientas", "Tuercas"],
+      "schedule": [
+        [1, 2, "08:15", "13:00", "15:30", "19:30"],
+        [6, null, "08:30", "13:00", null, null]
+      ]
+    },
+    "contact": {
+      "telephone": {
+        "label": "3813182940"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "José Colombres",
+      "number": 232
+    },
+    "attributes": ["physicalStore", "retail", "bill"],
+    "paymentMethods": ["cash", "transfer", "cardDebit"]
+  },
+  {
+    "id": 5,
+    "categorie": ["products", "businessIndustrial"],
+    "info": {
+      "label": "La Aldaba Herrajes",
+      "type": "store",
+      "items": ["Picaportes", "Bisagras", "Herrajes", "Cerraduras"],
+      "schedule": [
+        [1, 5, "08:00", "19:30", null, null],
+        [6, null, "09:00", "13:00", null, null]
+      ]
+    },
+    "contact": {
+      "telephone": {
+        "label": "3814227566"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "number": 1095,
+      "street": "Provincia de Mendoza"
+    },
+    "attributes": ["physicalStore", "retail", "bill"],
+    "paymentMethods": ["cash", "transfer", "cardDebit", "cardCredit"]
+  },
+  {
+    "id": 6,
+    "categorie": ["products", "libreria"],
+    "info": {
+      "label": "Piedra Papel o Tijera",
+      "logo": true,
+      "type": "store",
+      "items": [
+        "Artículos escolares",
+        "Papelería",
+        "Artística",
+        "Lanas e hilos",
+        "Fotocopias",
+        "Impresiones",
+        "Sublimaciones"
+      ],
+      "schedule": [
+        [1, 5, "09:00", "13:00", "17:00", "20:30"],
+        [6, null, "10:00", "13:30", null, null]
+      ]
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3816416594"
+      },
+      "googleMaps": {
+        "href": "https://l.instagram.com/?u=https%3A%2F%2Fmaps.app.goo.gl%2FDqmVWfxPSjwFDjoPA%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaetSZSl9dv5x-Jjo5m60X3lihJRdPDXrPs1x8Tbbye4UBLR-GVEcq0OAhNfcg_aem_cyqMMO_nkkIJkPMsERWxbg&e=AT3RNfpRj3URAmLNi0RRPlJBdDCw8kRC_Xrva9DUghXRkJpvrfSEj9f_elNCQWsUER7eUULeZzrimCLg2boqI1rx2XVwYhPdO8hW-IE",
+        "label": "Piedra Papel o Tijera"
+      },
+      "ig": {
+        "href": "https://www.instagram.com/piedrapapeltijera.tuc/?hl=es-la",
+        "label": "piedrapapeltijera.tuc"
+      },
+      "fb": {
+        "label": "piedrapapeltijera.tuc",
+        "href": "https://www.facebook.com/piedrapapeltijera.tuc/?locale=es_LA"
+      },
+      "mail": {
+        "label": "piedrapapeltijera.tuc@gmail.com"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Provincia de Mendoza",
+      "number": 121
+    },
+    "attributes": ["physicalStore", "retail", "bill"],
+    "paymentMethods": ["cash", "cardDebit", "transfer"]
+  },
+  {
+    "id": 7,
+    "categorie": ["products", "libreria"],
+    "info": {
+      "label": "Austin Tucuman",
+      "logo": true,
+      "type": "store",
+      "items": [
+        "Insumos de impresión",
+        "Resmas",
+        "Lámina de imán adhesiva",
+        "Tintas",
+        "Llaveros",
+        "Sublimacion",
+        "Tatuajes temporales"
+      ],
+      "schedule": [
+        [1, 5, "09:30", "18:00", null, null],
+        [6, null, "09:30", "13:00", null, null]
+      ],
+      "desc": "En Austin Tucumán podés encontrar variedad en papeles, tintas, productos Ibicraft y mucho más."
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3814774281"
+      },
+      "ig": {
+        "href": "https://www.instagram.com/austintucuman/?hl=es-la",
+        "label": "austintucuman"
+      },
+      "fb": {
+        "href": "https://www.facebook.com/austinventastucuman/?locale=es_LA",
+        "label": "austinventastucuman"
+      },
+      "googleMaps": {
+        "href": "https://www.google.com/maps/place/Austin+Tucum%C3%A1n/@-26.840751,-65.2061063,17z/data=!3m1!4b1!4m6!3m5!1s0x94225dd34d29c157:0x42708a2f44c87f97!8m2!3d-26.840751!4d-65.2061063!16s%2Fg%2F11jnqb6zk_?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+        "label": "Austin Tucumán"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Simón Bolívar",
+      "number": 440
+    },
+    "attributes": [
+      "physicalStore",
+      "retail",
+      "wholesaler",
+      "localPickup",
+      "shipping",
+      "bill"
+    ],
+    "paymentMethods": ["cash", "transfer", "cardDebit", "walletOnline"]
+  },
+  {
+    "id": 8,
+    "categorie": ["products"],
+    "info": {
+      "label": "Tucumán Underground",
+      "logo": true,
+      "type": "store",
+      "items": [
+        "Joyeria",
+        "Acero Quirúrgico",
+        "Mates personalizados",
+        "Accesorios",
+        "Figuras",
+        "Ropa",
+        "Pines",
+        "Mochilas",
+        "Mascaras",
+        "Entradas"
+      ],
+      "schedule": [[1, 6, "10:00", "13:00", "17:00", "21:00"]],
+      "desc": "Rock shop🤘 en San Miguel de Tucumán dedicado a los fanáticos del ROCK, METAL Y CULTURA ALTERNATIVA"
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3816651011"
+      },
+      "ig": {
+        "href": "https://www.instagram.com/tucumanunderground/",
+        "label": "tucumanunderground"
+      },
+      "fb": {
+        "label": "TucumanUnderground",
+        "href": "https://www.facebook.com/TucumanUnderground/"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Gral. José de San Martín",
+      "number": 285
+    },
+    "attributes": ["physicalStore", "retail", "shipping"],
+    "paymentMethods": ["cash", "transfer", "cardDebit"]
+  },
+  {
+    "id": 9,
+    "categorie": ["products", "casaJardin"],
+    "info": {
+      "label": "Nacho Plast",
+      "logo": true,
+      "type": "store",
+      "desc": "Bazar por mayor y menor",
+      "items": [
+        "Macetas y mangueras",
+        "Artículos para baño",
+        "Herméticos y organizadores",
+        "Vidrio y acrilico",
+        "Tachos",
+        "Bolsas y mochilas",
+        "Aluminio",
+        "Acero",
+        "Cerámico",
+        "Enlozado",
+        "Juguetes",
+        "Art. para mascotas",
+        "Art. de limpieza",
+        "Sahumerios y velas",
+        "Sillas y mesas",
+        "Art. de plastico",
+        "Art. de cotillón",
+        "Art. de repostería",
+        "Descartables"
+      ],
+      "schedule": [
+        [1, 5, "09:00", "14:00", "16:30", "20:30"],
+        [6, null, "09:00", "14:00", null, null]
+      ]
+    },
+    "contact": {
+      "ig": {
+        "href": "https://www.instagram.com/nachoplast_/",
+        "label": "nachoplast_"
+      },
+      "whatsapp": {
+        "label": "3812068010"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Virgen de la Merced",
+      "number": 236
+    },
+    "attributes": [
+      "physicalStore",
+      "retail",
+      "wholesaler",
+      "localPickup",
+      "shipping",
+      "bill",
+      "catalog",
+      "nacShipping"
+    ],
+    "paymentMethods": [
+      "mercadoPago",
+      "walletOnline",
+      "cash",
+      "transfer",
+      "cardDebit"
+    ]
+  },
+  {
+    "id": 10,
+    "categorie": ["products", "othersProducts"],
+    "info": {
+      "label": "Líder 1 sellos",
+      "logo": true,
+      "type": "store",
+      "desc": "Sellos profesionales y corporativos en el día, seguridad, calidad y garantía",
+      "schedule": [[1, 5, "09:00", "13:00", "16:00", "21:00"]]
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3815864055"
+      },
+      "ig": {
+        "label": "lider.sellos",
+        "href": "https://www.instagram.com/lider.sellos/"
+      },
+      "fb": {
+        "href": "https://www.facebook.com/LiderUnoSellos",
+        "label": "LiderUnoSellos"
+      },
+      "web": {
+        "href": "https://treinta.shop/deliverydelsello",
+        "label": "Tienda"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "San Juan",
+      "number": 2291
+    },
+    "attributes": ["onlineStore", "catalog", "nacShipping"],
+    "paymentMethods": ["cash", "transfer", "cardDebit"]
+  },
+  {
+    "id": 11,
+    "categorie": ["products", "othersProducts"],
+    "info": {
+      "label": "3DLAND",
+      "logo": true,
+      "type": "store",
+      "desc": "Ofrecemos servicios de impresión 3D, venta de equipos, insumos y repuestos.",
+      "items": [
+        "Granja de Impresión 3D",
+        "Impresoras 3D",
+        "Insumos y Repuestos",
+        "Servicio Técnico",
+        "Llaveros",
+        "Mates",
+        "Filamentos",
+        "Impresiones 3D"
+      ]
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3816159200"
+      },
+      "ig": {
+        "href": "https://www.instagram.com/3dlandtuc/",
+        "label": "3dlandtuc"
+      },
+      "web": {
+        "href": "https://merch.3dland.com.ar/",
+        "label": "Link"
+      },
+      "catalogLink": {
+        "href": "https://3dlandmerch.my.canva.site/video",
+        "label": "Link"
+      },
+      "fb": {
+        "label": "3DLANDTUC",
+        "href": "https://www.facebook.com/3DLANDTUC/"
+      },
+      "mail": {
+        "label": "3d.land.tuc@gmail.com"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Combate de Las Piedras",
+      "number": 881
+    },
+    "attributes": [
+      "physicalStore",
+      "catalog",
+      "wholesaler",
+      "retail",
+      "shipping",
+      "nacShipping"
+    ],
+    "paymentMethods": ["cash", "transfer", "cardDebit"]
+  },
+  {
+    "id": 12,
+    "categorie": ["services", "catering"],
+    "info": {
+      "label": "Tamarindo Pizzeria",
+      "logo": true,
+      "type": "entrepreneurship",
+      "desc": "🍕El sabor de lo diferente\nDonde la tradición napolitana se combina con la pasión caribeña🔥\nCatering para eventos.\nEventos cerrados\n📞 Reserva tu fecha"
+    },
+    "contact": {
+      "ig": {
+        "href": "https://www.instagram.com/tamarindo.pizzeria/",
+        "label": "tamarindo.pizzeria"
+      },
+      "whatsapp": {
+        "label": "3815392681"
+      }
+    },
+    "ubication": {
+      "department": "capital"
+    },
+    "attributes": ["homeWork"],
+    "paymentMethods": ["cash", "transfer", "cardDebit"],
+    "tags": ["pizzas", "comidas"]
   }
 ]

@@ -38,35 +38,17 @@ export type TypeContactLink = {
   label: string;
   href?: string;
 };
+export type TypeSchedule = (number | string | null)[];
+
 export type TypeItemDb = {
   id: number;
   categorie: string[];
   info: {
     label: string;
     logo?: boolean;
-    desc: string;
+    desc?: string;
     type: keyof typeof OBJ_TYPES_STORE;
-    schedule?: {
-      range?: number[][];
-      fix?: {
-        1: number[];
-        2: number[];
-        3: number[];
-        4: number[];
-        5: number[];
-        6: number[];
-        7: number[];
-      };
-      // fix: {
-      //   1: [11, 21],
-      //   2: [11, 21],
-      //   3: [11, 21],
-      //   4: [11, 21],
-      //   5: [11, 21],
-      //   6: [11, 21],
-      //   7: [11, 21],
-      // },
-    };
+    schedule?: TypeSchedule[];
     items?: string[];
     itemsNo?: string[];
   };
@@ -87,10 +69,10 @@ export type TypeItemDb = {
     neighborhood?: string;
     street?: string;
     number?: number;
-    desc?: string;
+    references?: string;
   };
   attributes?: string[];
-  paymentMethods: string[];
+  paymentMethods?: string[];
   tags?: string[];
 };
 

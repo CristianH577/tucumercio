@@ -10,6 +10,7 @@ import InputSearch from "../components/InputSearch";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import LoginIcon from "@mui/icons-material/Login";
 
 export default function NavMenu() {
   const navigate = useNavigate();
@@ -49,16 +50,15 @@ export default function NavMenu() {
           />
         </div>
 
-        <Link
-          to="faqs"
-          title="Ir a preguntas frecuentes"
-          className="hidden sm:flex"
-        >
-          <HelpOutlineOutlinedIcon
-            className="self-center text-secondary-dark"
-            fontSize="small"
-          />
-        </Link>
+        <div className="hidden sm:flex gap-2 items-center text-secondary-dark">
+          <Link to="faqs" title="Ir a preguntas frecuentes">
+            <HelpOutlineOutlinedIcon fontSize="small" />
+          </Link>
+
+          <Link to="login" title="Iniciar sesión" className="hidden">
+            <LoginIcon fontSize="small" />
+          </Link>
+        </div>
       </div>
 
       <MenuMovil isOpen={isOpenMenu} setIsOpen={setIsOpenMenu} />

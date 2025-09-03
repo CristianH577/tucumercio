@@ -80,7 +80,7 @@ export default function CardHeader({
   const size_ = sizes[size];
 
   const props_subtitle = {
-    className: "text-neutral-500 inline-flex gap-0.5 items-center",
+    className: "text-neutral-500 inline-flex gap-0.5 items-end",
     style: { fontSize: size_.subtitle },
   };
 
@@ -108,7 +108,7 @@ export default function CardHeader({
 
       <div
         className={
-          "flex flex-col gap-0.5 max-xs:items-center" +
+          "flex flex-col gap-0.5 max-xs:items-center capitalize" +
           (classes.text ? " " + classes.text : "")
         }
       >

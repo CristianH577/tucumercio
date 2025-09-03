@@ -47,7 +47,7 @@ export default function Footer() {
             <ul>
               {LINKS_NAV.map(
                 (item) =>
-                  item.id !== "contacto" && (
+                  !["contacto", "login"].includes(item.id) && (
                     <li key={item.id}>
                       <Link
                         to={item.href || item.id}

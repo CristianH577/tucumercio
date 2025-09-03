@@ -60,7 +60,10 @@ export default function ItemsView({
           title="Ver más detalles"
           className="border-3 border-neutral-300 rounded-md p-2 flex flex-col gap-2 shadow-sm"
         >
-          <CardHeader item={item} classes={{ img: "w-full max-w-[100px]" }} />
+          <CardHeader
+            item={item}
+            classes={{ img: "w-full max-w-[100px] max-h-[100px]" }}
+          />
 
           <Divider />
 

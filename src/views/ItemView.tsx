@@ -24,7 +24,6 @@ import CardHeader from "../components/CardHeader";
 
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import type { TypeItemDb } from "../consts/types";
 
 const DB: TypeItemDb[] = database;
@@ -100,46 +99,25 @@ export default function ItemView() {
           <Divider />
 
           <motion.section className="space-y-4" variants={variants_sections}>
-            <article>
+            <article className="space-y-2">
               <h2 className="text-lg font-semibold">Sobre el negocio</h2>
               {data.info.desc && <p className="indent-2">{data.info.desc}</p>}
 
               {schedule && (
                 <div>
-                  <br />
-                  <span className="inline-flex items-center gap-0.5">
-                    <AccessTimeIcon fontSize="small" />
-                    Horarios:
-                  </span>
-                  <ul className="ps-2">
-                    {schedule.range && (
-                      <li>
-                        {
-                          OBJ_SCHEDULE[
-                            schedule.range[0][0] as keyof typeof OBJ_SCHEDULE
-                          ]
-                        }{" "}
-                        a{" "}
-                        {
-                          OBJ_SCHEDULE[
-                            schedule.range[0][1] as keyof typeof OBJ_SCHEDULE
-                          ]
-                        }{" "}
-                        de {schedule.range[1][0]} a {schedule.range[1][1]}hs.
+                  <i>Horarios:</i>
+                  <ol className="list-inside">
+                    {schedule.map((list, i) => (
+                      <li key={i}>
+                        {OBJ_SCHEDULE[list[0] as keyof typeof OBJ_SCHEDULE]}
+                        {list[1] &&
+                          " a " +
+                            OBJ_SCHEDULE[list[1] as keyof typeof OBJ_SCHEDULE]}
+                        , {list[2]}-{list[3]}hs
+                        {list[4] && " y " + list[4] + "-" + list[5] + "hs"}
                       </li>
-                    )}
-                    {schedule.fix &&
-                      Object.entries(schedule.fix).map(([day, range]) => (
-                        <li key={day}>
-                          {
-                            OBJ_SCHEDULE[
-                              Number(day) as keyof typeof OBJ_SCHEDULE
-                            ]
-                          }
-                          : {range[0]} a {range[1]}hs
-                        </li>
-                      ))}
-                  </ul>
+                    ))}
+                  </ol>
                 </div>
               )}
             </article>
@@ -253,6 +231,10 @@ export default function ItemView() {
                       : id === "mail"
                       ? "mailto:" + val.label
                       : val.href || "#";
+
+                  // if (["ig", "fb", "x"].includes(id)) {
+                  //   val.label = "@" + val.label;
+                  // }
                   return (
                     <motion.li
                       key={id}
@@ -277,6 +259,7 @@ export default function ItemView() {
                         rel="noopener noreferrer"
                         className="hover:underline"
                       >
+                        {["ig", "fb", "x"].includes(id) && "@"}
                         {val.label || "Link"}{" "}
                         <OpenInNewIcon fontSize="inherit" />
                       </a>

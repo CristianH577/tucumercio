@@ -13,6 +13,12 @@ export const getHrefSearch = (filtersValues: TypeFiltersValues) => {
       case "page":
         break;
       case "categories":
+        const keys = Object.keys(filtersValues.categories);
+        if (keys.length > 0) {
+          const val = JSON.stringify(filtersValues.categories);
+          add.push([key, val]);
+        }
+        break;
       case "contact":
       case "attributes":
         if (filtersValues[key].length > 0) {

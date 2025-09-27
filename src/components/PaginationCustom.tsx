@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./PaginationCustom.css";
 
 interface InterfaceProps {
@@ -29,31 +30,15 @@ interface InterfaceProps {
   iconElipsisHoverInf?: string | any;
   iconElipsisSup?: string;
   iconElipsisHoverSup?: string | any;
-}
 
-// const default_breakpoints = {
-//     240: {
-//         showElipsis: true
-//     },
-//     320: {
-//         showJumps: true
-//     },
-//     400: {
-//         siblings: 1
-//     },
-//     500: {
-//         siblings: 2
-//     },
-//     600: {
-//         siblings: 3
-//     },
-//     700: {
-//         siblings: 4
-//     },
-//     800: {
-//         siblings: 5
-//     },
-// }
+  breakpoints?: {
+    [key: number]: {
+      showElipsis?: boolean;
+      siblings?: number;
+      showJumps?: boolean;
+    };
+  };
+}
 
 const icon_arrow_curv_left = (
   <svg
@@ -102,25 +87,29 @@ export default function PaginationCustom({
   iconElipsisHoverInf = icon_arrow_curv_left,
   iconElipsisSup = "...",
   iconElipsisHoverSup = icon_arrow_curv_right,
+
+  breakpoints,
 }: InterfaceProps) {
-  // const default_configs = {
-  //   siblings: siblings === undefined ? 3 : siblings,
-  // };
-  // const [configs, setConfigs] = useState(default_configs);
+  const default_configs = {
+    showElipsis: showElipsis,
+    siblings: siblings,
+    showJumps: showJumps,
+  };
+  const [configs, setConfigs] = useState(default_configs);
 
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const lim_inf =
-    currentPage - siblings < 1
+    currentPage - configs.siblings < 1
       ? 1
-      : currentPage + siblings > totalPages
-      ? totalPages - siblings * 2
-      : currentPage - siblings;
+      : currentPage + configs.siblings > totalPages
+      ? totalPages - configs.siblings * 2
+      : currentPage - configs.siblings;
   const lim_sup =
-    currentPage + siblings > totalPages
+    currentPage + configs.siblings > totalPages
       ? totalPages
-      : currentPage - siblings < 1
-      ? 1 + siblings * 2
-      : currentPage + siblings;
+      : currentPage - configs.siblings < 1
+      ? 1 + configs.siblings * 2
+      : currentPage + configs.siblings;
 
   // style
   const class_li =
@@ -160,42 +149,42 @@ export default function PaginationCustom({
     last: () => setPage(totalPages),
     next: () => setPage(currentPage + 1),
     elipsisInf: () => {
-      let to = currentPage - siblings * 2;
+      let to = currentPage - configs.siblings * 2;
       if (to < 1) to = 1;
-      if (siblings === 0) to = currentPage - 1;
+      if (configs.siblings === 0) to = currentPage - 1;
       setPage(to);
     },
     elipsisSup: () => {
-      var to = currentPage + siblings * 2;
+      var to = currentPage + configs.siblings * 2;
       if (to > totalPages) to = totalPages;
-      if (siblings === 0) to = currentPage + 1;
+      if (configs.siblings === 0) to = currentPage + 1;
       setPage(to);
     },
   };
 
-  // useEffect(() => {
-  //   if (breakpoints) {
-  //     const updateConfigs = () => {
-  //       const screen = window.innerWidth;
-  //       const new_config = { ...default_configs };
+  useEffect(() => {
+    if (breakpoints) {
+      const updateConfigs = () => {
+        const screen = window.innerWidth;
+        const configs_ = structuredClone(default_configs);
 
-  //       Object.entries(breakpoints).forEach(([breakpoint, value]) => {
-  //         if (Number(breakpoint) <= screen) {
-  //           Object.assign(new_config, value);
-  //         }
-  //       });
+        Object.entries(breakpoints).forEach(([breakpoint, value]) => {
+          if (Number(breakpoint) <= screen) {
+            Object.assign(configs_, value);
+          }
+        });
 
-  //       setConfigs(new_config);
-  //     };
+        setConfigs(configs_);
+      };
 
-  //     updateConfigs();
-  //     window.addEventListener("resize", updateConfigs);
+      updateConfigs();
+      window.addEventListener("resize", updateConfigs);
 
-  //     return () => {
-  //       window.removeEventListener("resize", updateConfigs);
-  //     };
-  //   }
-  // }, []);
+      return () => {
+        window.removeEventListener("resize", updateConfigs);
+      };
+    }
+  }, []);
 
   return (
     <nav
@@ -222,7 +211,7 @@ export default function PaginationCustom({
           role="button"
           aria-label="first page button"
           title="Primera página"
-          data-hidden={showJumps ? lim_inf <= 1 : true}
+          data-hidden={configs.showJumps ? lim_inf <= 1 : true}
           className={classes_.first}
           onClick={actions.first}
         >
@@ -233,8 +222,8 @@ export default function PaginationCustom({
           data-slot="elipsisInf"
           role="button"
           aria-label="elipsis inferior button"
-          title={"Saltar " + siblings * 2 + " páginas atrás"}
-          data-hidden={showElipsis ? lim_inf <= 1 : true}
+          title={"Saltar " + configs.siblings * 2 + " páginas atrás"}
+          data-hidden={configs.showElipsis ? lim_inf <= 1 : true}
           className={classes_.elipsisInf}
           onClick={actions.elipsisInf}
         >
@@ -267,8 +256,8 @@ export default function PaginationCustom({
           data-slot="elipsisSup"
           role="button"
           aria-label="elipsis superior button"
-          title={"Saltar " + siblings * 2 + " páginas adelante"}
-          data-hidden={showElipsis ? lim_sup === totalPages : true}
+          title={"Saltar " + configs.siblings * 2 + " páginas adelante"}
+          data-hidden={configs.showElipsis ? lim_sup === totalPages : true}
           className={classes_.elipsisSup}
           onClick={actions.elipsisSup}
         >
@@ -283,7 +272,7 @@ export default function PaginationCustom({
           role="button"
           aria-label="last page button"
           title="Última página"
-          data-hidden={showJumps ? lim_sup >= totalPages : true}
+          data-hidden={configs.showJumps ? lim_sup >= totalPages : true}
           className={classes_.last}
           onClick={actions.last}
         >

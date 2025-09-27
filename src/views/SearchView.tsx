@@ -60,16 +60,16 @@ export default function SearchView() {
     setLoading(true);
     let items_: TypeItemDb[] = structuredClone(DB);
 
-    if (filtersValues.categories.length > 0) {
-      filtersValues.categories.forEach((key, i) => {
-        items_ = items_.filter((item) => {
-          if (key.includes("other") && !item.categorie[i]) {
-            return true;
-          }
-          return item.categorie.includes(key);
-        });
-      });
-    }
+    // if (filtersValues.categories) {
+    //   filtersValues.categories.forEach((key, i) => {
+    //     items_ = items_.filter((item) => {
+    //       if (key.includes("other") && !item.categorie[i]) {
+    //         return true;
+    //       }
+    //       return item.categorie.includes(key);
+    //     });
+    //   });
+    // }
 
     if (filtersValues.ubication) {
       items_ = items_.filter(
@@ -139,6 +139,8 @@ export default function SearchView() {
         if (filters_.hasOwnProperty(key)) {
           switch (key) {
             case "categories":
+              filters_[key] = JSON.parse(paramsObj[key]);
+              break;
             case "contact":
             case "attributes":
               filters_[key] = paramsObj[key].split(",");
@@ -171,7 +173,8 @@ export default function SearchView() {
             value={inputText}
             setValue={setInputText}
             handleSearch={handleSearch}
-            onClear={() => navigate("/search")}
+            // onClear={() => navigate("/search")}
+            onClear={() => setFiltersValues({ ...filtersValues, text: "" })}
             colors={{
               border: "var(--color-tertiary)",
               borderHover: "var(--color-warning)",
@@ -200,6 +203,28 @@ export default function SearchView() {
               <FilterListIcon />
             </Button>
           </ButtonGroup>
+
+          <Button
+            onClick={() => {
+              const db_ = structuredClone(database);
+
+              db_.map((item) => {
+                const items = item.info.items;
+
+                if (items) {
+                  item.offered = {
+                    items: items,
+                  };
+                }
+
+                return item;
+              });
+
+              console.log(db_);
+            }}
+          >
+            test
+          </Button>
         </article>
 
         <span className="text-center text-neutral-400">
@@ -219,7 +244,7 @@ export default function SearchView() {
           siblings={1}
           className="mt-4"
           classes={{
-            li: "!bg-primary !text-neutral !data-[disabled=true]:text-neutral-500 !data-[active=true]:bg-tertiary data-[active=true]:text-secondary-ligth !hover:bg-tertiary !hover:text-secondary-ligth",
+            li: "!bg-primary !text-neutral data-[disabled=true]:!text-neutral-500 data-[active=true]:!bg-tertiary data-[active=true]:!text-secondary-ligth hover:!bg-tertiary hover:!text-secondary-ligth",
           }}
         />
       )}

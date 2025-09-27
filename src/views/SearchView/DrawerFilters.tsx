@@ -10,25 +10,33 @@ import {
   OBJ_LOCALIDADES,
 } from "../../consts/objectsLists";
 import { FILTERS_VALUES_DEFAULT } from "../../consts/siteConfig";
-import type { TypeFiltersValues } from "../../consts/types";
+import type { TypeCategories, TypeFiltersValues } from "../../consts/types";
 
 import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  Button,
   Checkbox,
   Divider,
   FormControlLabel,
   FormGroup,
-  IconButton,
 } from "@mui/material";
+
+import {
+  Button,
+  Drawer,
+  FormControl,
+  FormLabel,
+  IconButton,
+  Option,
+  Select,
+} from "@mui/joy";
+
+import SelectCategorie from "../../components/SelectCategorie";
 
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
-import SelectCategorie from "../../components/SelectCategorie";
-import { Drawer, FormControl, FormLabel, Option, Select } from "@mui/joy";
 
 type TypeDrawerFilters = {
   isOpen: boolean;
@@ -97,7 +105,7 @@ export default function DrawerFilters({
       onClose={onClose}
       anchor="right"
       slotProps={{
-        root: { className: "w-full xs:!max-w-[325px] xs:rounded-s-lg" },
+        content: { className: "w-full xs:!max-w-[320px] xs:rounded-s-lg" },
       }}
     >
       <h2 data-slot="header" className="font-semibold text-xl p-2">
@@ -108,7 +116,7 @@ export default function DrawerFilters({
 
       <motion.section
         data-slot="body"
-        className="py-4 flex flex-col gap-3 overflow-x-hidden overflow-y-auto"
+        className="p-4 flex flex-col gap-3 overflow-x-hidden overflow-y-auto"
         variants={{
           visible: {
             transition: {
@@ -124,10 +132,10 @@ export default function DrawerFilters({
           className="flex flex-col gap-2 w-full px-2"
           variants={variant_articles}
         >
-          <h3 className="css-1ckvkg0-JoyFormLabel-root">Categoria</h3>
+          <h3 className="text-sm font-medium">Categoria</h3>
           <SelectCategorie
             selected={filtersValuesTemp.categories}
-            setSelected={(val: string[]) =>
+            setSelected={(val: TypeCategories) =>
               setFiltersValuesTemp({ ...filtersValuesTemp, categories: val })
             }
           />
@@ -303,7 +311,8 @@ export default function DrawerFilters({
         </IconButton>
 
         <Button
-          variant="contained"
+          variant="outlined"
+          color="warning"
           title="Aplicar filtros"
           onClick={handleApply}
         >

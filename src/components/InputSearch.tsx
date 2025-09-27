@@ -49,7 +49,6 @@ export default function InputSearch({
       sx={{
         "& .MuiInputBase-root": {
           padding: 0,
-          borderRadius: "100px",
         },
         "& .MuiOutlinedInput-notchedOutline": {
           borderWidth: 2,
@@ -64,31 +63,22 @@ export default function InputSearch({
         input: {
           className: classes?.input ? " " + classes.input : "",
           endAdornment: (
-            <ButtonGroup variant="text" color="inherit" className="!">
-              <Button
-                title="Limpiar"
-                sx={{
-                  width: "2.5rem",
-                  minWidth: 0,
-                  borderRadius: 0,
-                }}
-                onClick={onClear}
-              >
+            <ButtonGroup
+              variant="text"
+              color="inherit"
+              className="border-s border-neutral-300"
+              sx={{
+                borderRadius: 0,
+              }}
+            >
+              <Button title="Limpiar" onClick={onClear}>
                 <HighlightOffIcon
                   className="text-neutral-500"
                   fontSize="small"
                 />
               </Button>
 
-              <Button
-                title="Buscar"
-                sx={{
-                  width: "2.5rem",
-                  minWidth: 0,
-                  borderRadius: "100px",
-                }}
-                onClick={handleSearch}
-              >
+              <Button title="Buscar" onClick={handleSearch}>
                 <SearchIcon
                   sx={{
                     color: colors_.iconSearch,

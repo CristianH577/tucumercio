@@ -17,12 +17,12 @@ export default function Home() {
     <main className="!max-w-none space-y-6 pb-6">
       <SliderHero />
 
-      <section className="flex flex-col min-[1800px]:items-center">
+      <section className="flex flex-col gap-6 min-[1800px]:items-center">
         <SliderCategorie id="products" />
         <SliderCategorie className="sm:flex-row-reverse" id="services" />
       </section>
 
-      <section className="flex flex-wrap justify-center bg-primary/80 py-8 text-neutral">
+      <section className="flex flex-wrap justify-center py-8 text-neutral bg-gradient-to-b from-primary via-transparent to-primary shadow-sm">
         <CardHome
           title="¿Por qué usar el sitio?"
           text="El sitio está orientado para todo tipo de comercio, desde
@@ -45,9 +45,9 @@ export default function Home() {
         />
       </section>
 
-      <section className="flex flex-col max-md:items-center max-md:text-center px-2 sm:px-4 sm:flex-row-reverse justify-center sm:gap-8 sm:py-12">
-        <h1 className="font-bold text-6xl md:text-7xl max-w-96 py-8 md:py-16">
-          Encuentre negocios en su localidad
+      <section className="flex flex-col gap-4 px-2 sm:px-4 sm:flex-row-reverse justify-center items-center sm:gap-8 sm:py-12">
+        <h1 className="font-bold text-4xl xs:text-5xl md:text-7xl max-w-[440px] p-4 sm:p-8 border-5 border-warning text-warning rounded-lg h-fit w-full">
+          Encuentre negocios en su localidad!
         </h1>
 
         <MapTuc

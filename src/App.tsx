@@ -9,7 +9,7 @@ import Layout from "./layout/Layout";
 import NotFound from "./layout/NotFound";
 import FormsView from "./views/FormsView";
 
-const Home = lazy(() => import("./views/Home"));
+// const Home = lazy(() => import("./views/Home"));
 const SearchView = lazy(() => import("./views/SearchView"));
 const ItemView = lazy(() => import("./views/ItemView"));
 const Faqs = lazy(() => import("./views/Faqs"));
@@ -40,7 +40,7 @@ function App() {
   return (
     <Routes>
       <Route path="" element={<Layout />}>
-        <Route index element={<Home />} />
+        <Route index element={<SearchView />} />
 
         {routes.map((route: TypeRoute) => {
           if (route.id in routesComponent) {

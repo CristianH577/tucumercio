@@ -1,50 +1,33 @@
 [
   {
     "id": 1,
-    "categorie": ["products", "businessIndustrial"],
     "info": {
       "label": "Imanes Tucuman",
       "logo": true,
       "desc": "Tienda de imanes de neodimio, artículos magnéticos y otros. No hay local, pero puede retirar o ver los artículos en la dirección en el horario de atención con aviso previo.",
       "schedule": [[1, 6, 11, 21]],
-      "type": "store",
-      "items": [
-        "Imanes de neodimio",
-        "Imanes cerámicos(ferrita)",
-        "Imanes de arrastre(pesca)",
-        "Imán flexible",
-        "Imán en lámina",
-        "Juguetes",
-        "Accesorios eléctricos",
-        "Sales polifosfato(antisarro)"
-      ]
+      "type": "store"
     },
     "contact": {
       "whatsapp": {
         "label": "3813156907"
       },
       "web": {
-        "label": "imanestucuman.com.ar",
         "href": "https://www.imanestucuman.com.ar"
       },
       "fb": {
-        "label": "Imanes Tucuman",
-        "href": "https://www.facebook.com/profile.php?id=61560974355591"
+        "label": "imanestucuman"
       },
       "ig": {
-        "label": "imanestucuman",
-        "href": "https://www.instagram.com/imanestucuman/"
+        "label": "imanestucuman"
       },
       "x": {
-        "label": "imanestucuman",
-        "href": "https://x.com/imanestucuman"
+        "label": "imanestucuman"
       },
       "googleMaps": {
-        "label": "Imanes Tucuman",
         "href": "https://www.google.com.ar/maps/place/Imanes+Tucum%C3%A1n/@-26.8887704,-65.2256411,17.54z/data=!4m6!3m5!1s0x94225b001419003b:0x46095acd3879452e!8m2!3d-26.8894591!4d-65.2246928!16s%2Fg%2F11wb1cdws9?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"
       },
       "catalogLink": {
-        "label": "",
         "href": "https://drive.google.com/file/d/1TFOWDem-Iqdg3zdf3W0KKzgLELq4ZmHw/view?usp=drive_link"
       },
       "mail": {
@@ -66,17 +49,38 @@
       "catalog"
     ],
     "paymentMethods": ["cash", "transfer", "mercadoPago", "paypal"],
-    "tags": ["imantado", "magnetico", "manualidades", "construccion"]
+    "tags": ["imantado", "magnetico", "manualidades", "construccion"],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_others": {}
+        },
+        "prod_jj": {}
+      }
+    },
+    "offered": {
+      "items": [
+        "Imanes de neodimio",
+        "Imanes cerámicos(ferrita)",
+        "Imanes de arrastre(pesca)",
+        "Imán flexible",
+        "Imán en lámina",
+        "Juguetes",
+        "Accesorios eléctricos",
+        "Sales polifosfato(antisarro)"
+      ]
+    }
   },
   {
     "id": 2,
-    "categorie": ["services", "programming"],
     "info": {
       "label": "Verde Ave",
       "logo": true,
       "desc": "Diseño de aplicaciones web y otros servicios de programación.",
-      "type": "entrepreneurship",
-      "items": [
+      "type": "entrepreneurship"
+    },
+    "offered": {
+      "services": [
         "Landing page",
         "App web",
         "Sitio web",
@@ -86,28 +90,62 @@
     },
     "contact": {
       "web": {
-        "label": "verdeave.onrender.com",
         "href": "https://verdeave.onrender.com/"
       },
       "ig": {
-        "label": "verde_ave",
-        "href": "https://www.instagram.com/verde_ave/"
+        "label": "verde_ave"
       }
     },
     "ubication": {
       "department": "capital"
     },
     "paymentMethods": ["cash", "transfer", "mercadoPago", "paypal"],
-    "tags": ["diseño"]
+    "tags": ["diseño"],
+    "categories": {
+      "serv": {
+        "serv_prog": {}
+      }
+    }
   },
   {
     "id": 3,
-    "categorie": ["products", "businessIndustrial", "plomeriaGas"],
     "info": {
       "label": "Miotti Gas",
       "logo": true,
       "desc": "Todos los Repuestos para gas y agua, materiales de instalación, artefactos para el hogar, calderas y más!",
       "type": "store",
+
+      "schedule": [
+        [1, 5, "08:00", "12:30", "16:00", "20:00"],
+        [6, null, "08:30", "12:30", null, null]
+      ]
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3812075495"
+      },
+      "telephone": {
+        "label": "3814331694"
+      },
+      "ig": {
+        "label": "miottigas"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Av. Manuel Belgrano",
+      "number": 1890
+    },
+    "attributes": ["physicalStore", "bill"],
+    "paymentMethods": ["cash", "transfer", "cardDebit"],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_plogas": {}
+        }
+      }
+    },
+    "offered": {
       "items": [
         "Ornallas de cocina",
         "Repuestos de horno eléctrico",
@@ -116,31 +154,13 @@
         "Repuestos de termotanque",
         "Repuestos de pileta"
       ]
-    },
-    "contact": {
-      "whatsapp": {
-        "label": "3812075495"
-      },
-      "telephone": { "label": "3814331694" },
-      "ig": {
-        "label": "miottigas",
-        "link": "https://www.instagram.com/miottigas/"
-      }
-    },
-    "ubication": {
-      "department": "capital",
-      "street": "Av. Manuel Belgrano",
-      "number": 1890
-    },
-    "attributes": ["physicalStore"]
+    }
   },
   {
     "id": 4,
-    "categorie": ["products", "businessIndustrial"],
     "info": {
       "label": "TodoBulon",
       "type": "store",
-      "items": ["Bulones", "Tornillos", "Herramientas", "Tuercas"],
       "schedule": [
         [1, 2, "08:15", "13:00", "15:30", "19:30"],
         [6, null, "08:30", "13:00", null, null]
@@ -157,15 +177,27 @@
       "number": 232
     },
     "attributes": ["physicalStore", "retail", "bill"],
-    "paymentMethods": ["cash", "transfer", "cardDebit"]
+    "paymentMethods": ["cash", "transfer", "cardDebit"],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_cons": {},
+          "prod_nein_ferr": {},
+          "prod_nein_bul": {}
+        }
+      }
+    },
+    "offered": {
+      "items": ["Bulones", "Tornillos", "Herramientas", "Tuercas"]
+    }
   },
   {
     "id": 5,
-    "categorie": ["products", "businessIndustrial"],
     "info": {
       "label": "La Aldaba Herrajes",
       "type": "store",
-      "items": ["Picaportes", "Bisagras", "Herrajes", "Cerraduras"],
+      "logo": true,
+
       "schedule": [
         [1, 5, "08:00", "19:30", null, null],
         [6, null, "09:00", "13:00", null, null]
@@ -174,6 +206,15 @@
     "contact": {
       "telephone": {
         "label": "3814227566"
+      },
+      "ig": {
+        "label": "la.aldaba.herrajes"
+      },
+      "web": {
+        "href": "https://laaldabaherrajes.mitiendanube.com/"
+      },
+      "whatsapp": {
+        "label": "3812083285"
       }
     },
     "ubication": {
@@ -181,25 +222,42 @@
       "number": 1095,
       "street": "Provincia de Mendoza"
     },
-    "attributes": ["physicalStore", "retail", "bill"],
-    "paymentMethods": ["cash", "transfer", "cardDebit", "cardCredit"]
+    "attributes": [
+      "physicalStore",
+      "retail",
+      "bill",
+      "catalog",
+      "wholesaler",
+      "localPickup",
+      "onlineStore"
+    ],
+    "paymentMethods": ["cash", "transfer", "cardDebit", "cardCredit"],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_cons": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Picaportes",
+        "Bisagras",
+        "Herrajes",
+        "Cerraduras",
+        "Smart home",
+        "Manijas",
+        "Pasadores"
+      ]
+    }
   },
   {
     "id": 6,
-    "categorie": ["products", "libreria"],
     "info": {
       "label": "Piedra Papel o Tijera",
       "logo": true,
       "type": "store",
-      "items": [
-        "Artículos escolares",
-        "Papelería",
-        "Artística",
-        "Lanas e hilos",
-        "Fotocopias",
-        "Impresiones",
-        "Sublimaciones"
-      ],
+
       "schedule": [
         [1, 5, "09:00", "13:00", "17:00", "20:30"],
         [6, null, "10:00", "13:30", null, null]
@@ -210,16 +268,13 @@
         "label": "3816416594"
       },
       "googleMaps": {
-        "href": "https://l.instagram.com/?u=https%3A%2F%2Fmaps.app.goo.gl%2FDqmVWfxPSjwFDjoPA%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaetSZSl9dv5x-Jjo5m60X3lihJRdPDXrPs1x8Tbbye4UBLR-GVEcq0OAhNfcg_aem_cyqMMO_nkkIJkPMsERWxbg&e=AT3RNfpRj3URAmLNi0RRPlJBdDCw8kRC_Xrva9DUghXRkJpvrfSEj9f_elNCQWsUER7eUULeZzrimCLg2boqI1rx2XVwYhPdO8hW-IE",
-        "label": "Piedra Papel o Tijera"
+        "href": "https://l.instagram.com/?u=https%3A%2F%2Fmaps.app.goo.gl%2FDqmVWfxPSjwFDjoPA%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaetSZSl9dv5x-Jjo5m60X3lihJRdPDXrPs1x8Tbbye4UBLR-GVEcq0OAhNfcg_aem_cyqMMO_nkkIJkPMsERWxbg&e=AT3RNfpRj3URAmLNi0RRPlJBdDCw8kRC_Xrva9DUghXRkJpvrfSEj9f_elNCQWsUER7eUULeZzrimCLg2boqI1rx2XVwYhPdO8hW-IE"
       },
       "ig": {
-        "href": "https://www.instagram.com/piedrapapeltijera.tuc/?hl=es-la",
         "label": "piedrapapeltijera.tuc"
       },
       "fb": {
-        "label": "piedrapapeltijera.tuc",
-        "href": "https://www.facebook.com/piedrapapeltijera.tuc/?locale=es_LA"
+        "label": "piedrapapeltijera.tuc"
       },
       "mail": {
         "label": "piedrapapeltijera.tuc@gmail.com"
@@ -231,24 +286,31 @@
       "number": 121
     },
     "attributes": ["physicalStore", "retail", "bill"],
-    "paymentMethods": ["cash", "cardDebit", "transfer"]
+    "paymentMethods": ["cash", "cardDebit", "transfer"],
+    "categories": {
+      "prod": {
+        "prod_lib": {}
+      }
+    },
+    "offered": {
+      "items": [
+        "Artículos escolares",
+        "Papelería",
+        "Artística",
+        "Lanas e hilos",
+        "Fotocopias",
+        "Impresiones",
+        "Sublimaciones"
+      ]
+    }
   },
   {
     "id": 7,
-    "categorie": ["products", "libreria"],
     "info": {
       "label": "Austin Tucuman",
       "logo": true,
       "type": "store",
-      "items": [
-        "Insumos de impresión",
-        "Resmas",
-        "Lámina de imán adhesiva",
-        "Tintas",
-        "Llaveros",
-        "Sublimacion",
-        "Tatuajes temporales"
-      ],
+
       "schedule": [
         [1, 5, "09:30", "18:00", null, null],
         [6, null, "09:30", "13:00", null, null]
@@ -260,16 +322,13 @@
         "label": "3814774281"
       },
       "ig": {
-        "href": "https://www.instagram.com/austintucuman/?hl=es-la",
         "label": "austintucuman"
       },
       "fb": {
-        "href": "https://www.facebook.com/austinventastucuman/?locale=es_LA",
         "label": "austinventastucuman"
       },
       "googleMaps": {
-        "href": "https://www.google.com/maps/place/Austin+Tucum%C3%A1n/@-26.840751,-65.2061063,17z/data=!3m1!4b1!4m6!3m5!1s0x94225dd34d29c157:0x42708a2f44c87f97!8m2!3d-26.840751!4d-65.2061063!16s%2Fg%2F11jnqb6zk_?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
-        "label": "Austin Tucumán"
+        "href": "https://www.google.com/maps/place/Austin+Tucum%C3%A1n/@-26.840751,-65.2061063,17z/data=!3m1!4b1!4m6!3m5!1s0x94225dd34d29c157:0x42708a2f44c87f97!8m2!3d-26.840751!4d-65.2061063!16s%2Fg%2F11jnqb6zk_?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D"
       }
     },
     "ubication": {
@@ -285,15 +344,62 @@
       "shipping",
       "bill"
     ],
-    "paymentMethods": ["cash", "transfer", "cardDebit", "walletOnline"]
+    "paymentMethods": ["cash", "transfer", "cardDebit", "walletOnline"],
+    "categories": {
+      "prod": {
+        "prod_lib": {}
+      }
+    },
+    "offered": {
+      "items": [
+        "Insumos de impresión",
+        "Resmas",
+        "Lámina de imán adhesiva",
+        "Tintas",
+        "Llaveros",
+        "Sublimacion",
+        "Tatuajes temporales"
+      ]
+    }
   },
   {
     "id": 8,
-    "categorie": ["products"],
     "info": {
       "label": "Tucumán Underground",
       "logo": true,
       "type": "store",
+      "schedule": [[1, 6, "10:00", "13:00", "17:00", "21:00"]],
+      "desc": "Rock shop🤘 en San Miguel de Tucumán dedicado a los fanáticos del ROCK, METAL Y CULTURA ALTERNATIVA"
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3816651011"
+      },
+      "ig": {
+        "label": "tucumanunderground"
+      },
+      "fb": {
+        "label": "TucumanUnderground"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Gral. José de San Martín",
+      "number": 285
+    },
+    "attributes": ["physicalStore", "retail", "shipping"],
+    "paymentMethods": ["cash", "transfer", "cardDebit"],
+    "categories": {
+      "prod": {
+        "prod_ind": {
+          "prod_ind_joy": {},
+          "prod_ind_ropa": {},
+          "prod_ind_acc": {}
+        },
+        "prod_others": {}
+      }
+    },
+    "offered": {
       "items": [
         "Joyeria",
         "Acero Quirúrgico",
@@ -305,60 +411,16 @@
         "Mochilas",
         "Mascaras",
         "Entradas"
-      ],
-      "schedule": [[1, 6, "10:00", "13:00", "17:00", "21:00"]],
-      "desc": "Rock shop🤘 en San Miguel de Tucumán dedicado a los fanáticos del ROCK, METAL Y CULTURA ALTERNATIVA"
-    },
-    "contact": {
-      "whatsapp": {
-        "label": "3816651011"
-      },
-      "ig": {
-        "href": "https://www.instagram.com/tucumanunderground/",
-        "label": "tucumanunderground"
-      },
-      "fb": {
-        "label": "TucumanUnderground",
-        "href": "https://www.facebook.com/TucumanUnderground/"
-      }
-    },
-    "ubication": {
-      "department": "capital",
-      "street": "Gral. José de San Martín",
-      "number": 285
-    },
-    "attributes": ["physicalStore", "retail", "shipping"],
-    "paymentMethods": ["cash", "transfer", "cardDebit"]
+      ]
+    }
   },
   {
     "id": 9,
-    "categorie": ["products", "casaJardin"],
     "info": {
       "label": "Nacho Plast",
       "logo": true,
       "type": "store",
       "desc": "Bazar por mayor y menor",
-      "items": [
-        "Macetas y mangueras",
-        "Artículos para baño",
-        "Herméticos y organizadores",
-        "Vidrio y acrilico",
-        "Tachos",
-        "Bolsas y mochilas",
-        "Aluminio",
-        "Acero",
-        "Cerámico",
-        "Enlozado",
-        "Juguetes",
-        "Art. para mascotas",
-        "Art. de limpieza",
-        "Sahumerios y velas",
-        "Sillas y mesas",
-        "Art. de plastico",
-        "Art. de cotillón",
-        "Art. de repostería",
-        "Descartables"
-      ],
       "schedule": [
         [1, 5, "09:00", "14:00", "16:30", "20:30"],
         [6, null, "09:00", "14:00", null, null]
@@ -366,7 +428,6 @@
     },
     "contact": {
       "ig": {
-        "href": "https://www.instagram.com/nachoplast_/",
         "label": "nachoplast_"
       },
       "whatsapp": {
@@ -394,11 +455,41 @@
       "cash",
       "transfer",
       "cardDebit"
-    ]
+    ],
+    "categories": {
+      "prod": {
+        "prod_cj": {
+          "prod_cj_bz": {},
+          "prod_cj_jar": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Macetas y mangueras",
+        "Artículos para baño",
+        "Herméticos y organizadores",
+        "Vidrio y acrilico",
+        "Tachos",
+        "Bolsas y mochilas",
+        "Aluminio",
+        "Acero",
+        "Cerámico",
+        "Enlozado",
+        "Juguetes",
+        "Art. para mascotas",
+        "Art. de limpieza",
+        "Sahumerios y velas",
+        "Sillas y mesas",
+        "Art. de plastico",
+        "Art. de cotillón",
+        "Art. de repostería",
+        "Descartables"
+      ]
+    }
   },
   {
     "id": 10,
-    "categorie": ["products", "othersProducts"],
     "info": {
       "label": "Líder 1 sellos",
       "logo": true,
@@ -411,16 +502,13 @@
         "label": "3815864055"
       },
       "ig": {
-        "label": "lider.sellos",
-        "href": "https://www.instagram.com/lider.sellos/"
+        "label": "lider.sellos"
       },
       "fb": {
-        "href": "https://www.facebook.com/LiderUnoSellos",
         "label": "LiderUnoSellos"
       },
       "web": {
-        "href": "https://treinta.shop/deliverydelsello",
-        "label": "Tienda"
+        "href": "https://treinta.shop/deliverydelsello"
       }
     },
     "ubication": {
@@ -429,46 +517,36 @@
       "number": 2291
     },
     "attributes": ["onlineStore", "catalog", "nacShipping"],
-    "paymentMethods": ["cash", "transfer", "cardDebit"]
+    "paymentMethods": ["cash", "transfer", "cardDebit"],
+    "categories": {
+      "prod": {
+        "prod_others": {}
+      }
+    }
   },
   {
     "id": 11,
-    "categorie": ["products", "othersProducts"],
     "info": {
       "label": "3DLAND",
       "logo": true,
       "type": "store",
-      "desc": "Ofrecemos servicios de impresión 3D, venta de equipos, insumos y repuestos.",
-      "items": [
-        "Granja de Impresión 3D",
-        "Impresoras 3D",
-        "Insumos y Repuestos",
-        "Servicio Técnico",
-        "Llaveros",
-        "Mates",
-        "Filamentos",
-        "Impresiones 3D"
-      ]
+      "desc": "Ofrecemos servicios de impresión 3D, venta de equipos, insumos y repuestos."
     },
     "contact": {
       "whatsapp": {
         "label": "3816159200"
       },
       "ig": {
-        "href": "https://www.instagram.com/3dlandtuc/",
         "label": "3dlandtuc"
       },
       "web": {
-        "href": "https://merch.3dland.com.ar/",
-        "label": "Link"
+        "href": "https://merch.3dland.com.ar/"
       },
       "catalogLink": {
-        "href": "https://3dlandmerch.my.canva.site/video",
-        "label": "Link"
+        "href": "https://3dlandmerch.my.canva.site/video"
       },
       "fb": {
-        "label": "3DLANDTUC",
-        "href": "https://www.facebook.com/3DLANDTUC/"
+        "label": "3DLANDTUC"
       },
       "mail": {
         "label": "3d.land.tuc@gmail.com"
@@ -487,11 +565,27 @@
       "shipping",
       "nacShipping"
     ],
-    "paymentMethods": ["cash", "transfer", "cardDebit"]
+    "paymentMethods": ["cash", "transfer", "cardDebit"],
+    "categories": {
+      "prod": {
+        "prod_others": {}
+      }
+    },
+    "offered": {
+      "items": [
+        "Granja de Impresión 3D",
+        "Impresoras 3D",
+        "Insumos y Repuestos",
+        "Servicio Técnico",
+        "Llaveros",
+        "Mates",
+        "Filamentos",
+        "Impresiones 3D"
+      ]
+    }
   },
   {
     "id": 12,
-    "categorie": ["services", "catering"],
     "info": {
       "label": "Tamarindo Pizzeria",
       "logo": true,
@@ -500,7 +594,6 @@
     },
     "contact": {
       "ig": {
-        "href": "https://www.instagram.com/tamarindo.pizzeria/",
         "label": "tamarindo.pizzeria"
       },
       "whatsapp": {
@@ -512,6 +605,1490 @@
     },
     "attributes": ["homeWork"],
     "paymentMethods": ["cash", "transfer", "cardDebit"],
-    "tags": ["pizzas", "comidas"]
+    "tags": ["pizzas", "comidas"],
+    "categories": {
+      "serv": {
+        "serv_cat": {}
+      }
+    }
+  },
+  {
+    "id": 13,
+    "info": {
+      "label": "Ganez",
+      "logo": true,
+      "type": "store",
+      "desc": "Venta maquinas y herramientas",
+      "schedule": [
+        [1, 4, "09:30", "13:00", "14:00", "18:00"],
+        [5, null, "09:30", "13:00", null, null]
+      ]
+    },
+    "contact": {
+      "ig": {
+        "label": "ganez.ferreteria"
+      },
+      "fb": {
+        "label": "ganez.ferreteria"
+      },
+      "whatsapp": {
+        "label": "3813370632"
+      },
+      "mail": {
+        "label": "ganezferreteria@gmail.com"
+      },
+      "web": {
+        "href": "https://ganez.mitiendanube.com/"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Monteagudo",
+      "number": 218
+    },
+    "attributes": [
+      "physicalStore",
+      "retail",
+      "bill",
+      "nacShipping",
+      "shipping"
+    ],
+    "paymentMethods": ["cash", "transfer", "cardDebit"],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_ferr": {}
+        }
+      }
+    }
+  },
+  {
+    "id": 14,
+    "info": {
+      "label": "Hummer Autopartes",
+      "logo": true,
+      "type": "store",
+
+      "schedule": [
+        [1, 5, "08:30", "12:30", "16:30", "20:30"],
+        [6, null, "09:00", "15:00", null, null]
+      ]
+    },
+    "contact": {
+      "fb": {
+        "label": "hummerAutopartesTuc"
+      },
+      "whatsapp": {
+        "label": "3816555559"
+      },
+      "ig": {
+        "label": "hummerautopartestuc"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Congreso De Tucumán",
+      "number": 566
+    },
+    "attributes": ["physicalStore", "shipping", "localPickup"],
+    "paymentMethods": ["cash", "transfer", "cardDebit"],
+    "categories": {
+      "prod": {
+        "prod_aut": {},
+        "prod_others": {}
+      }
+    },
+    "offered": {
+      "items": ["Accesorios de autos"]
+    }
+  },
+  {
+    "id": 15,
+    "info": {
+      "label": "DescarTuc",
+      "logo": true,
+      "type": "entrepreneurship",
+      "desc": "Venta de descartables para gastronomía y más!"
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3816877028"
+      },
+      "fb": {
+        "href": "https://www.facebook.com/profile.php?id=61574862055938"
+      },
+      "ig": {
+        "label": "descar.tuc"
+      }
+    },
+    "ubication": {
+      "department": "capital"
+    },
+    "attributes": ["shipping", "wholesaler", "retail", "localPickup"],
+    "paymentMethods": ["transfer", "cash", "cardDebit"],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_desc": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Cajas p/pizza",
+        "Bandejas de cartón y plásticas",
+        "Bolsas camisetas, arranque, residuos y más",
+        "Vasos, servilletas, resma de papel, film",
+        "Moños ",
+        "Bolsas Riñón",
+        "Bolsas Kraft ",
+        "Cajas para hamburguesa",
+        "Papel resma",
+        "Guantes de nitrilo"
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "info": {
+      "label": "Mas Envases",
+      "logo": true,
+      "type": "store",
+      "desc": "Ofrecemos los envases descartables de la más alta calidad para impulsar su negocio. Descubra todo acerca de nuestra empresa y los increíbles productos que tenemos disponibles.",
+
+      "schedule": [
+        [1, 5, "09:00", "13:00", "16:00", "20:00"],
+        [6, null, "09:00", "13:00", null, null]
+      ]
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3813020596"
+      },
+      "telephone": {
+        "label": "3814298014"
+      },
+      "web": {
+        "href": "https://www.mas-envases.com/"
+      },
+      "mail": {
+        "label": "masenvases01@gmail.com"
+      },
+      "fb": {
+        "label": "MasEnvases"
+      },
+      "ig": {
+        "label": "mas_envases"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "neighborhood": "Barrio sur",
+      "street": "Bolívar",
+      "number": 180
+    },
+    "attributes": [
+      "physicalStore",
+      "catalog",
+      "bill",
+      "retail",
+      "wholesaler",
+      "ownShipping"
+    ],
+    "paymentMethods": ["cash", "transfer", "mercadoPago", "cardDebit"],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_desc": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Art. de aluminio",
+        "Bolsas",
+        "Art. de cartón",
+        "Art. de papel",
+        "Art. de plástico",
+        "Art. de telgopor",
+        "Art. de vidrio",
+        "Vasos",
+        "Bandejas"
+      ]
+    }
+  },
+  {
+    "id": 17,
+    "info": {
+      "label": "Maderas Norte",
+      "logo": true,
+      "type": "store",
+      "schedule": [
+        [1, 5, "08:00", "13:30", "14:30", "19:00"],
+        [6, null, "08:30", "13:00", null, null]
+      ]
+    },
+    "contact": {
+      "fb": {
+        "label": "maderasnorte.tuc"
+      },
+      "whatsapp": {
+        "label": "3764691856"
+      },
+      "ig": {
+        "label": "maderas.norte"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Av. Pte Nestor Kirchner",
+      "number": 2199
+    },
+    "attributes": [
+      "physicalStore",
+      "retail",
+      "wholesaler",
+      "localPickup",
+      "bill"
+    ],
+    "paymentMethods": [
+      "cash",
+      "transfer",
+      "cardDebit",
+      "cardCredit",
+      "walletOnline",
+      "mercadoPago",
+      "qr"
+    ],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_cons": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Maderas",
+        "Tirantes",
+        "MDF",
+        "Placas MDF, fenólico, pino",
+        "Tableros de pino, OSB",
+        "Imprégnante",
+        "Tablas",
+        "Barrales",
+        "Machimbre",
+        "Molduras",
+        "Varillas tarugos"
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "info": {
+      "label": "Bulonería Roca",
+      "logo": true,
+      "type": "store",
+      "desc": "Burlonería y Ferretería Roca. Amplia variedad de bulones y artículos de ferretería varios.",
+      "schedule": [
+        [1, 5, "08:30", "13:00", "15:30", "19:30"],
+        [6, null, "08:30", "13:00", null, null]
+      ]
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3812316324"
+      },
+      "googleMaps": {
+        "href": "https://www.google.com.ar/maps/place/Buloner%C3%ADa+Roca/@-26.83782,-65.2346627,19.56z/data=!4m6!3m5!1s0x94225c6331eadde5:0xc0759ae88703c29a!8m2!3d-26.837642!4d-65.2343587!16s%2Fg%2F1tdz5xnb?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
+      },
+      "fb": {
+        "label": "buloneriaroca"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Av. Pres. Néstor Kirchner",
+      "number": 2233
+    },
+    "attributes": ["physicalStore", "retail", "bill", "localPickup"],
+    "paymentMethods": ["transfer", "cash", "cardDebit", "cardCredit"],
+    "categories": {
+      "prod": {
+        "prod_nein": { "prod_nein_bul": {} }
+      }
+    },
+    "offered": {
+      "items": [
+        "Tornillos",
+        "Bulones",
+        "Artículos de ferretería",
+        "Herramientas",
+        "Cerraduras",
+        "Sondas para válvulas"
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "info": {
+      "label": "Selcon SRL",
+      "type": "store",
+      "schedule": [
+        [1, 5, "08:00", "13:30", "15:30", "19:30"],
+        [6, null, "08:30", "13:00", null, null]
+      ]
+    },
+    "contact": {
+      "telephone": {
+        "label": "3814228169"
+      },
+      "googleMaps": {
+        "href": "https://www.google.com.ar/maps/place/Selcon+SRL/@-26.8332443,-65.218861,14.88z/data=!4m6!3m5!1s0x94225e9e3b0b485b:0x86d9d9349bb9ce4c!8m2!3d-26.8265432!4d-65.2131244!16s%2Fg%2F1wc32b47?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "José Colombres",
+      "number": 193
+    },
+    "attributes": [
+      "physicalStore",
+      "localPickup",
+      "shipping",
+      "retail",
+      "bill"
+    ],
+    "paymentMethods": ["cash", "transfer", "cardDebit", "cardCredit"],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_cons": {}
+        }
+      }
+    },
+    "offered": {
+      "items": ["Herrajes", "Cerraduras", "Bisagras", "Picaportes", "Pasadores"]
+    }
+  },
+  {
+    "id": 20,
+    "info": {
+      "label": "Atenor Hno. SRL",
+      "logo": true,
+      "type": "store",
+      "desc": "Insumos para el agro, la industria y la construcción",
+      "schedule": [
+        [1, 5, "08:00", "13:00", "16:30", "19:30"],
+        [6, null, "08:30", "12:30", null, null]
+      ]
+    },
+    "contact": {
+      "web": {
+        "href": "http://atenor.com.ar/"
+      },
+      "googleMaps": {
+        "href": "https://www.google.com.ar/maps/place/Atenor+Hno.+SRL+-+Centro/@-26.8303776,-65.2137346,15.66z/data=!4m6!3m5!1s0x94225c166caf650b:0xf2c23efa17784947!8m2!3d-26.8235037!4d-65.2076929!16s%2Fg%2F1tftm934?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
+      },
+      "catalogLink": {
+        "href": "http://atenor.com.ar/pdf/pdf01.pdf"
+      },
+      "whatsapp": {
+        "label": "3813392742"
+      },
+      "telephone": {
+        "label": "3814224476"
+      },
+      "ig": {
+        "label": "atenortucuman"
+      },
+      "mail": {
+        "label": "ventas@atenor.com.ar"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "neighborhood": "Barrio Norte",
+      "street": "Junin",
+      "number": 486
+    },
+    "attributes": [
+      "physicalStore",
+      "retail",
+      "wholesaler",
+      "localPickup",
+      "shipping",
+      "catalog",
+      "bill"
+    ],
+    "paymentMethods": [
+      "cash",
+      "transfer",
+      "walletOnline",
+      "cardDebit",
+      "cardCredit",
+      "qr"
+    ],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_others": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Bolsas para uso Agrícola",
+        "Invernadero - Huerta",
+        "Contenedores y Cajones",
+        "Embalaje - Packaging",
+        "Cobertores - Lonas - Redes",
+        "Seguridad Industrial y Vial",
+        "Ropa y Calzado de Trabajo",
+        "Sanidad e Higiene",
+        "Hogar y Jardín",
+        "Riego"
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "info": {
+      "label": "Tucuman Aventura",
+      "logo": true,
+      "type": "store",
+      "desc": "Somos una empresa dedicada a la venta de artículos deportivos, camping, y accesorios de electrónica",
+      "schedule": [
+        [1, 5, "09:30", "18:30", null, null],
+        [6, null, "09:30", "13:30", null, null]
+      ]
+    },
+    "contact": {
+      "ig": {
+        "label": "tucuman.aventuras_smt"
+      },
+      "whatsapp": {
+        "label": "3815707939"
+      },
+      "fb": {
+        "label": "tucumanaventuras"
+      },
+      "mail": {
+        "label": "tucumanaventuras10@gmail.com"
+      },
+      "googleMaps": {
+        "href": "https://maps.app.goo.gl/UB3cfGrSr16airxv7"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Avenida avellaneda",
+      "number": 831
+    },
+    "attributes": ["retail", "shipping", "localPickup"],
+    "paymentMethods": ["cash", "transfer", "cardCredit", "cardDebit"],
+    "categories": {
+      "prod": {
+        "prod_dep": {}
+      }
+    },
+    "offered": {
+      "items": [
+        "Artículos para camping",
+        "Artículos para ciclismo",
+        "Artículos para trekking",
+        "Artículos deportivos"
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "info": {
+      "label": "Pollano Sanitarios",
+      "type": "store",
+      "schedule": [
+        [1, 5, "08:00", "18:00", null, null],
+        [6, null, "08:30", "13:00", null, null]
+      ]
+    },
+    "contact": {
+      "telephone": {
+        "label": "3814218319"
+      },
+      "googleMaps": {
+        "href": "https://maps.app.goo.gl/52vySyj1Eve1SYGu9"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "José Colombres",
+      "number": 370
+    },
+    "attributes": [
+      "physicalStore",
+      "retail",
+      "wholesaler",
+      "localPickup",
+      "shipping",
+      "bill"
+    ],
+    "paymentMethods": ["cash", "transfer", "cardCredit", "cardDebit"],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_plogas": {},
+          "prod_nein_cons": {},
+          "prod_nein_ferr": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Tanques de agua",
+        "Accesorios de baño",
+        "Artículos sanitarios",
+        "Cañeria",
+        "Accesorios de PVC",
+        "Accesorios de bronce",
+        "Canillas",
+        "Grifos"
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "info": {
+      "label": "Ampere",
+      "logo": true,
+      "type": "store",
+      "desc": "El especialista de siempre en materiales eléctricos e iluminación",
+      "schedule": [
+        [1, 5, "08:30", "18:00", null, null],
+        [6, null, "09:00", "13:00", null, null]
+      ]
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3813011110"
+      },
+      "web": {
+        "href": "https://www.ampere.com.ar/"
+      },
+      "googleMaps": {
+        "href": "https://maps.app.goo.gl/SK3nx3sW6sNqAjvk6"
+      },
+      "fb": {
+        "label": "AmpereArg"
+      },
+      "mail": {
+        "label": "ventas@ampere.com.ar"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "San Juan",
+      "number": 1089
+    },
+    "attributes": [
+      "physicalStore",
+      "retail",
+      "wholesaler",
+      "localPickup",
+      "shipping",
+      "bill"
+    ],
+    "paymentMethods": [
+      "cash",
+      "transfer",
+      "cardCredit",
+      "cardDebit",
+      "walletOnline",
+      "qr",
+      "mercadoPago"
+    ],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_elec": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Cables",
+        "Herramientas",
+        "Terminales",
+        "Luces",
+        "Leds",
+        "Focos",
+        "Motores",
+        "Canalización",
+        "Térmicas",
+        "Diyuntores"
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "info": {
+      "label": "Santiago Kohn",
+      "logo": true,
+      "type": "store",
+      "desc": "Materiales eléctricos, electrónica, iluminación, radio, audio y TV.",
+      "items": [
+        "Cables",
+        "Focos",
+        "Herramientas",
+        "Enchufes",
+        "Luces",
+        "Iluminación",
+        "Proyectores",
+        "Tableros"
+      ],
+      "schedule": [
+        [1, 5, "09:00", "20:00", null, null],
+        [6, null, "09:00", "13:00", null, null]
+      ]
+    },
+    "contact": {
+      "web": {
+        "href": "https://santiagokohn.com.ar/"
+      },
+      "googleMaps": {
+        "href": "https://maps.app.goo.gl/JYNKvWqLApngEF1NA"
+      },
+      "whatsapp": {
+        "label": "3813048580"
+      },
+      "mail": {
+        "label": "ventas@santiagokohn.com.ar"
+      },
+      "fb": {
+        "label": "santiagokohnsa"
+      },
+      "ig": {
+        "label": "santiagokohnsa"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Maipú",
+      "number": 785,
+      "neighborhood": "Barrio norte"
+    },
+    "attributes": [
+      "retail",
+      "wholesaler",
+      "physicalStore",
+      "bill",
+      "catalog",
+      "shipping",
+      "localPickup",
+      "onlineStore"
+    ],
+    "paymentMethods": [
+      "cash",
+      "transfer",
+      "walletOnline",
+      "qr",
+      "cardCredit",
+      "cardDebit",
+      "mercadoPago"
+    ],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_elec": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Cables",
+        "Focos",
+        "Herramientas",
+        "Enchufes",
+        "Luces",
+        "Iluminación",
+        "Proyectores",
+        "Tableros"
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "info": {
+      "label": "BP Soluciones Eléctricas",
+      "logo": true,
+      "type": "store",
+      "desc": "BP S.A. es una empresa familiar líder con más de 45 años de trayectoria, en la comercialización y distribución de materiales eléctricos en el noroeste argentino."
+    },
+    "contact": {
+      "web": {
+        "href": "https://bpsolucioneselectricas.com.ar/"
+      },
+      "telephone": {
+        "label": "3814459591"
+      },
+      "fb": {
+        "label": "BPsolucioneselectricas"
+      },
+      "mail": {
+        "label": "presupuestos@bp-sa.com.ar"
+      },
+      "ig": {
+        "label": "bpsolucioneselectricas"
+      },
+      "googleMaps": {
+        "href": "https://maps.app.goo.gl/MbjqkC3MzBPa1foy6"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Gral. José de San Martín",
+      "number": 1301
+    },
+    "attributes": [
+      "physicalStore",
+      "onlineStore",
+      "retail",
+      "wholesaler",
+      "localPickup",
+      "shipping",
+      "catalog",
+      "bill",
+      "nacShipping"
+    ],
+    "paymentMethods": [
+      "cash",
+      "transfer",
+      "walletOnline",
+      "qr",
+      "cardCredit",
+      "cardDebit",
+      "mercadoPago"
+    ],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_elec": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Lámparas",
+        "Luces",
+        "Artículos para construcción",
+        "Artículos industriales",
+        "Cables",
+        "Focos",
+        "Diyuntores",
+        "Térmicas"
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "info": {
+      "label": "Plasticaucho S.A.",
+      "logo": true,
+      "type": "fabricate",
+      "desc": "Comercializamos y distribuimos artículos de caucho y PVC.",
+      "items": [
+        "Piso de goma eva",
+        "Mangueras",
+        "Mangas PVC",
+        "Burletes",
+        "Correas",
+        "Regatones",
+        "Piso de goma",
+        "Piso de caucho",
+        "Cinta cubrecerco",
+        "Adhesivo"
+      ],
+      "schedule": [
+        [1, 5, "08:00", "13:00", "15:00", "18:00"],
+        [6, null, "08:30", "12:30", null, null]
+      ]
+    },
+    "contact": {
+      "telephone": {
+        "label": "3814330723"
+      },
+      "web": {
+        "href": "https://plasticaucho.com.ar/"
+      },
+      "googleMaps": {
+        "href": "https://maps.app.goo.gl/qoRGgGEHdTqsFui79"
+      },
+      "ig": {
+        "label": "plasticaucho"
+      },
+      "fb": {
+        "label": "Plasticaucho"
+      },
+      "whatsapp": {
+        "label": "3813000242"
+      },
+      "mail": {
+        "label": " comercial@plasticaucho.com.ar"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Lavalle",
+      "number": 2932
+    },
+    "attributes": [
+      "physicalStore",
+      "onlineStore",
+      "wholesaler",
+      "localPickup",
+      "catalog",
+      "bill",
+      "nacShipping"
+    ],
+    "paymentMethods": [
+      "cash",
+      "transfer",
+      "cardDebit",
+      "cardCredit",
+      "mercadoPago"
+    ],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_others": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Piso de goma eva",
+        "Mangueras",
+        "Mangas PVC",
+        "Burletes",
+        "Correas",
+        "Regatones",
+        "Piso de goma",
+        "Piso de caucho",
+        "Cinta cubrecerco",
+        "Adhesivo"
+      ]
+    }
+  },
+  {
+    "id": 27,
+    "info": {
+      "label": "Daz Importadora",
+      "logo": true,
+      "type": "store",
+      "desc": "Mayorista de Tecnología Electrónica Hogar Parlantes Auriculares",
+      "schedule": [
+        [1, 5, "09:00", "18:00", null, null],
+        [6, null, "10:00", "14:00", null, null]
+      ]
+    },
+    "contact": {
+      "ig": {
+        "label": "dazimportadora"
+      },
+      "fb": {
+        "label": "",
+        "href": "https://www.facebook.com/p/DAZ-Importadora-100066816454634"
+      },
+      "mail": {
+        "label": "dazimportadoradifu@gmail.com"
+      },
+      "web": {
+        "href": "https://dazimportadora.com.ar/"
+      },
+      "googleMaps": {
+        "href": "https://maps.app.goo.gl/hj2vpuuJVx6otQxo8"
+      },
+      "whatsapp": {
+        "label": "3813470215"
+      },
+      "telephone": {
+        "label": "3813150398"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Junín",
+      "number": 168
+    },
+    "attributes": [
+      "physicalStore",
+      "onlineStore",
+      "localPickup",
+      "wholesaler",
+      "shipping",
+      "nacShipping",
+      "bill",
+      "catalog"
+    ],
+    "paymentMethods": [
+      "cash",
+      "transfer",
+      "qr",
+      "walletOnline",
+      "cardDebit",
+      "cardCredit",
+      "mercadoPago"
+    ],
+    "categories": {
+      "prod": {
+        "prod_tecno": {},
+        "prod_sb": {},
+        "prod_lib": {},
+        "prod_cj": {
+          "prod_cj_bz": {}
+        },
+        "prod_nein": {
+          "prod_nein_ferr": {}
+        },
+        "prod_others": {},
+        "prod_jj": {}
+      }
+    },
+    "offered": {
+      "items": [
+        "Auriculares",
+        "Electrodomésticos",
+        "Relojes",
+        "Templados",
+        "Soportes para TV",
+        "Soportes para celulares",
+        "Artículos de audio, TV y video",
+        "Memorias",
+        "USB",
+        "Herramientas",
+        "Cargadores",
+        "Mochilas",
+        "Bolsos",
+        "Artículos de ferretería"
+      ]
+    }
+  },
+  {
+    "id": 28,
+    "info": {
+      "label": "Packing Envases",
+      "logo": true,
+      "type": "store",
+      "desc": "Comercializamos más de 3000 artículos descartables para alimentos, higiene y embalajes.\n\nBolsas y films, papeles, bandejas, vajilla descartable, etc.",
+      "items": [
+        "Descartables",
+        "Bolsas",
+        "Vasos",
+        "Sorbetes",
+        "Platos",
+        "Paper kraft",
+        "Bandejas",
+        "Sobres",
+        "Bolsas de papel"
+      ],
+      "schedule": [
+        [1, 5, "08:00", "13:00", "16:30", "20:00"],
+        [6, null, "09:00", "13:00", null, null]
+      ]
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3815466029"
+      },
+      "web": {
+        "href": "https://packingenvases.com.ar/"
+      },
+      "fb": {
+        "label": "packingenvasesOK"
+      },
+      "ig": {
+        "label": "packingenvases"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Pje. José Padilla",
+      "neighborhood": "Barrio norte",
+      "number": 38
+    },
+    "attributes": [
+      "physicalStore",
+      "onlineStore",
+      "retail",
+      "wholesaler",
+      "localPickup",
+      "shipping",
+      "nacShipping",
+      "catalog",
+      "bill"
+    ],
+    "paymentMethods": [
+      "cash",
+      "transfer",
+      "walletOnline",
+      "qr",
+      "cardCredit",
+      "cardDebit",
+      "mercadoPago"
+    ],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_desc": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Descartables",
+        "Bolsas",
+        "Vasos",
+        "Sorbetes",
+        "Platos",
+        "Paper kraft",
+        "Bandejas",
+        "Sobres",
+        "Bolsas de papel"
+      ]
+    }
+  },
+  {
+    "id": 29,
+    "info": {
+      "label": "Ferrepoint",
+      "logo": true,
+      "type": "store",
+      "schedule": [
+        [1, 5, "09:00", "12:30", "17:00", "21:00"],
+        [6, null, "09:00", "12:30", null, null]
+      ]
+    },
+    "contact": {
+      "mail": {
+        "label": "sculco@hotmail.com"
+      },
+      "whatsapp": {
+        "label": "3814124963"
+      },
+      "web": {
+        "href": "https://www.ferrepoint.com.ar/"
+      },
+      "googleMaps": {
+        "href": "https://maps.app.goo.gl/1nuFWwJ3z8P3bKQ49"
+      },
+      "fb": {
+        "label": "FerrePointTuc"
+      },
+      "telephone": {
+        "label": "3814124963"
+      },
+      "ig": {
+        "label": "ferrepoint_tuc"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Laprida",
+      "number": 273
+    },
+    "attributes": [
+      "physicalStore",
+      "onlineStore",
+      "retail",
+      "localPickup",
+      "shipping",
+      "catalog",
+      "bill"
+    ],
+    "paymentMethods": [
+      "cash",
+      "transfer",
+      "walletOnline",
+      "qr",
+      "cardCredit",
+      "cardDebit",
+      "mercadoPago"
+    ],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_ferr": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Herramientas",
+        "Materiales eléctricos",
+        "Jardineria",
+        "Artículos para plomería",
+        "Lubricantes",
+        "Pegamentos",
+        "Pinturas"
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "info": {
+      "label": "Indusnort",
+      "logo": true,
+      "type": "store",
+      "desc": "En Indusnort, nos comprometemos a proteger el medio ambiente y promover prácticas sostenibles. Es por eso que producimos bolsas plásticas utilizando material reciclado, y esto no solo beneficia a nuestro planeta, sino también a nuestros valiosos clientes.\n\nAl optar por nuestras bolsas plásticas de material reciclado, usted está contribuyendo activamente a la reducción de residuos y la conservación de recursos naturales.",
+      "schedule": [
+        [1, 5, "09:00", "14:00", "15:00", "19:00"],
+        [6, null, "09:00", "13:00", null, null]
+      ]
+    },
+    "contact": {
+      "web": {
+        "href": "https://indusnort.com.ar/"
+      },
+      "googleMaps": {
+        "href": "https://maps.app.goo.gl/X8iRYVowX4EphLKk9"
+      },
+      "ig": {
+        "label": "indusnort.bolsas"
+      },
+      "whatsapp": {
+        "label": "3815422308"
+      },
+      "mail": {
+        "label": "indusnort@gmail.com"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Uruguay",
+      "number": 4681
+    },
+    "attributes": [
+      "retail",
+      "localPickup",
+      "onlineStore",
+      "catalog",
+      "nacShipping",
+      "shipping"
+    ],
+    "paymentMethods": ["cash", "transfer"],
+    "tags": ["e-commerce"],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_others": {},
+          "prod_nein_desc": {}
+        }
+      }
+    },
+    "offered": {
+      "items": ["Bolsas de friselina", "Bolsas ecommerce", "Bolsas plasticas"]
+    }
+  },
+  {
+    "id": 31,
+    "info": {
+      "label": "LR Ventas",
+      "logo": true,
+      "type": "store",
+      "desc": "Empresa dedicada a la distribución de\nSaldo virtual\nCigarrillos\nMayorista de productos para kiosco",
+      "schedule": [[1, 5, "09:00", "17:30", null, null]]
+    },
+    "contact": {
+      "web": {
+        "href": "https://www.lrventas.com.ar/"
+      },
+      "whatsapp": {
+        "label": "3816850075"
+      },
+      "fb": {
+        "label": "lr.ventastuc"
+      },
+      "ig": {
+        "label": "L.rventas"
+      },
+      "googleMaps": {
+        "href": "https://maps.app.goo.gl/rAWse4rjaP3yWbHz7"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "San Miguel",
+      "number": 669
+    },
+    "attributes": [
+      "wholesaler",
+      "retail",
+      "onlineStore",
+      "localPickup",
+      "shipping",
+      "catalog"
+    ],
+    "paymentMethods": [
+      "cash",
+      "transfer",
+      "cardDebit",
+      "mercadoPago",
+      "walletOnline"
+    ],
+    "categories": {
+      "prod": {
+        "prod_albe": {
+          "prod_albe_alm": {}
+        },
+        "prod_others": {},
+        "prod_tecno": {}
+      }
+    },
+    "offered": {
+      "items": [
+        "Yerbas",
+        "Encendedores",
+        "Artículos para kiosco",
+        "Tabaqueria",
+        "Cigarrillos",
+        "Perfumeria",
+        "Higiene personal",
+        "Artículos de limpieza",
+        "Repelentes",
+        "Tecnología",
+        "Artículos para el hogar",
+        "Focos"
+      ]
+    }
+  },
+  {
+    "id": 32,
+    "info": {
+      "label": "Ximaro",
+      "logo": true,
+      "type": "store",
+      "schedule": [
+        [1, 5, "09:00", "19:00", null, null],
+        [6, null, "10:00", "14:00", null, null]
+      ]
+    },
+    "contact": {
+      "web": {
+        "href": "https://ximaro.com.ar/"
+      },
+      "whatsapp": {
+        "label": "3812089617"
+      },
+      "fb": {
+        "label": "ximaro1"
+      },
+      "mail": {
+        "label": " ximaroventas@gmail.com"
+      },
+      "ig": {
+        "label": "ximaro.com.ar"
+      },
+      "googleMaps": {
+        "href": "https://maps.app.goo.gl/jBTKQdMDaVLYhDYP7"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Provincia de Mendoza",
+      "number": 1102
+    },
+    "attributes": [
+      "physicalStore",
+      "onlineStore",
+      "wholesaler",
+      "localPickup",
+      "shipping",
+      "nacShipping",
+      "catalog",
+      "bill"
+    ],
+    "paymentMethods": [
+      "cash",
+      "transfer",
+      "walletOnline",
+      "cardCredit",
+      "cardDebit",
+      "mercadoPago"
+    ],
+    "categories": {
+      "prod": {
+        "prod_tecno": {
+          "prod_tecno_cel": {},
+          "prod_tecno_com": {},
+          "prod_tecno_electro": {}
+        },
+        "prod_cj": {},
+        "prod_reg": {}
+      }
+    },
+    "offered": {
+      "items": [
+        "Tecnología",
+        "Libreria",
+        "Herramientas",
+        "Accesorios",
+        "Celulares",
+        "Artículos deportivos",
+        "Termos",
+        "Regalaría ",
+        "Computación ",
+        "Artículos del hogar",
+        "Electrodomésticos "
+      ]
+    }
+  },
+  {
+    "id": 33,
+    "info": {
+      "label": "Famiq",
+      "logo": true,
+      "type": "store",
+      "desc": "🚀 Líderes en comercialización de Acero Inoxidable\n👨🏻‍🏭 Capacítate en los seminarios de Soldadura TIG",
+      "schedule": [[1, 5, "08:30", "12:30", "13:30", "17:30"]]
+    },
+    "contact": {
+      "telephone": {
+        "label": "3814212700"
+      },
+      "web": {
+        "href": "https://www.famiq.com.ar/"
+      },
+      "whatsapp": {
+        "label": "1141491111"
+      },
+      "googleMaps": {
+        "href": "https://maps.app.goo.gl/NBJkTkdUrxzGf6GT9"
+      },
+      "ig": {
+        "label": "famiq.ar"
+      },
+      "fb": {
+        "label": "famiq.ar"
+      },
+      "mail": {
+        "label": "ventas@famiq.com.ar"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "neighborhood": "Barrio norte",
+      "street": "Av. Nicolas Avellaneda",
+      "number": 554
+    },
+    "attributes": [
+      "physicalStore",
+      "wholesaler",
+      "retail",
+      "localPickup",
+      "shipping",
+      "nacShipping",
+      "catalog",
+      "bill"
+    ],
+    "paymentMethods": ["cash", "transfer", "cardDebit", "cardCredit"],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_cons": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Chapas",
+        "Barras",
+        "Perfiles",
+        "Mallas",
+        "Caños redondos",
+        "Caños estructurales",
+        "Brocas",
+        "Discos de corte y descaste",
+        "Limpiadores",
+        "Artículos de ferretería",
+        "Buloneria",
+        "Herrajes",
+        "Cables de acero",
+        "Tuercas",
+        "Tornillos",
+        "Arandelas"
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "info": {
+      "label": "Autino Hierros S.R.L",
+      "logo": true,
+      "type": "company",
+      "desc": "Empresa con amplia trayectoria en la comercialización de aceros , hierros , chapas , bronce , grilo",
+      "schedule": [[1, 5, "08:00", "12:00", "13:00", "18:00"]]
+    },
+    "contact": {
+      "whatsapp": {
+        "label": "3816409077"
+      },
+      "catalogLink": {
+        "href": "https://drive.google.com/file/d/133BFW3i4epcMFvS6NNYhKNvuz1tviQFp/view"
+      },
+      "ig": {
+        "label": "autinohierros.srl"
+      },
+      "telephone": {
+        "label": "3814330204"
+      },
+      "mail": {
+        "label": " Info@autinohierros.com.ar"
+      },
+      "fb": {
+        "label": "Autinohierros.srl"
+      },
+      "googleMaps": {
+        "href": "https://maps.app.goo.gl/kMexSE1qT3d1m56x6"
+      }
+    },
+    "ubication": {
+      "department": "capital",
+      "street": "Pasaje Grecia",
+      "number": 150
+    },
+    "attributes": [
+      "physicalStore",
+      "retail",
+      "shipping",
+      "nacShipping",
+      "catalog",
+      "bill",
+      "localPickup",
+      "wholesaler"
+    ],
+    "paymentMethods": ["cash", "transfer", "cardDebit", "cardCredit"],
+    "categories": {
+      "prod": {
+        "prod_nein": {
+          "prod_nein_others": {}
+        }
+      },
+      "serv": {
+        "serv_consman": {
+          "serv_consman_herr": {}
+        }
+      }
+    },
+    "offered": {
+      "items": [
+        "Aceros",
+        "Chapas",
+        "Hierros",
+        "Caños",
+        "Bronce",
+        "Grilon",
+        "Herramientas",
+        "Artículos de ferretería"
+      ]
+    }
   }
 ]

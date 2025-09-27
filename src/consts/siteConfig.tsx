@@ -54,7 +54,7 @@ export const FILTERS_VALUES_DEFAULT: TypeFiltersValues = {
   text: "",
   ubication: "",
   orderBy: "",
-  categories: [],
+  categories: {},
   contact: [],
   attributes: [],
 };

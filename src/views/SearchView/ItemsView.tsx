@@ -10,7 +10,7 @@ import type { TypeItemDb } from "../../consts/types";
 import { Link } from "react-router";
 import { CircularProgress, Divider, Tooltip } from "@mui/material";
 
-import CardHeader from "../../components/CardHeader";
+import CardHeader from "./CardHeader";
 
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
@@ -25,7 +25,7 @@ const variants_card = {
     opacity: 1,
     scale: 1,
   },
-  hover: { scale: 1.05 },
+  hover: { scale: 1.025 },
 };
 
 const MotionLink = motion.create(Link);
@@ -36,7 +36,7 @@ export default function ItemsView({
 }: TypeItemsViewProps) {
   if (loading)
     return (
-      <div className="flex justify-center">
+      <div className="flex justify-center h-screen">
         <CircularProgress />
       </div>
     );
@@ -48,7 +48,7 @@ export default function ItemsView({
     );
 
   return (
-    <section className="grid xs:grid-cols-[repeat(auto-fit,_minmax(220px,280px))] sm:grid-cols-[repeat(auto-fit,_minmax(200px,320px))] gap-4 md:gap-6 lg:gap-8 xs:justify-center mt-4">
+    <section className="grid xs:grid-cols-[repeat(auto-fit,_minmax(180px,300px))] sm:grid-cols-[repeat(auto-fit,_minmax(180px,300px))] gap-4 lg:gap-8 xs:justify-center mt-4">
       {items.map((item) => (
         <MotionLink
           key={item.id}
@@ -58,12 +58,9 @@ export default function ItemsView({
           whileHover="hover"
           to={"/search/" + item.id}
           title="Ver más detalles"
-          className="border-3 border-neutral-300 rounded-md p-2 flex flex-col gap-2 shadow-sm"
+          className="border-3 border-tertiary/80 rounded-md p-2 flex flex-col gap-2 shadow-sm"
         >
-          <CardHeader
-            item={item}
-            classes={{ img: "w-full max-w-[100px] max-h-[100px]" }}
-          />
+          <CardHeader item={item} />
 
           <Divider />
 
@@ -97,7 +94,21 @@ export default function ItemsView({
                     </li>
                   );
                 })}
-
+                {/* {Object.entries(OBJ_ATTRIBUTES).map(([id, data], i) => {
+                  if (item.attributes?.includes(id) && i < 5) {
+                    return (
+                      <li key={id}>
+                        {data.icon ? (
+                          <Tooltip title={data.label}>
+                            <data.icon />
+                          </Tooltip>
+                        ) : (
+                          <span>{data.label}</span>
+                        )}
+                      </li>
+                    );
+                  }
+                })} */}
                 {item.attributes.length > 5 && (
                   <li>
                     <MoreHorizIcon />

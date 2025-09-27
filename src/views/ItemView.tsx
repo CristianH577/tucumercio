@@ -20,11 +20,11 @@ import {
   Divider,
 } from "@mui/material";
 
-import CardHeader from "../components/CardHeader";
-
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import type { TypeItemDb } from "../consts/types";
+import ScheduleIcon from "@mui/icons-material/Schedule";
+import type { TypeItemDb, TypeOffered } from "../consts/types";
+import HeaderItemView from "./ItemView/HeaderItemView";
 
 const DB: TypeItemDb[] = database;
 const variants_sections = {
@@ -43,6 +43,13 @@ const variants_list = {
   initial: "hidden",
   animate: "visible",
 };
+
+const lists = [
+  { id: "items", label: "Artículos" },
+  { id: "itemsNo", label: "No se vende" },
+  { id: "services", label: "Servicios" },
+  { id: "servicesNo", label: "No se realiza" },
+];
 
 export default function ItemView() {
   const { id } = useParams();
@@ -83,17 +90,7 @@ export default function ItemView() {
       ) : (
         <>
           <motion.section variants={variants_sections}>
-            <CardHeader
-              item={data}
-              classes={{ img: "w-full max-w-[200px] max-h-[150px]" }}
-              size="lg"
-              slotsProps={{
-                img: {
-                  width: 200,
-                  height: 150,
-                },
-              }}
-            />
+            <HeaderItemView item={data} />
           </motion.section>
 
           <Divider />
@@ -101,11 +98,13 @@ export default function ItemView() {
           <motion.section className="space-y-4" variants={variants_sections}>
             <article className="space-y-2">
               <h2 className="text-lg font-semibold">Sobre el negocio</h2>
-              {data.info.desc && <p className="indent-2">{data.info.desc}</p>}
+              {data.info.desc && <p className="indent-2">{data.info.desc}.</p>}
 
               {schedule && (
                 <div>
-                  <i>Horarios:</i>
+                  <i className="inline-flex gap-0.5">
+                    <ScheduleIcon /> Horarios:
+                  </i>
                   <ol className="list-inside">
                     {schedule.map((list, i) => (
                       <li key={i}>
@@ -165,54 +164,63 @@ export default function ItemView() {
               </motion.ol>
             )}
 
-            {data.info.items && (
-              <Accordion
-                className="sm:w-fit"
-                title="Ver más"
-                sx={{
-                  boxShadow: "none",
-                  "&::before": {
-                    display: "none",
-                  },
-                  border: "4px solid var(--color-primary)",
-                  borderRadius: "10px",
-                  "&:hover": {
-                    borderColor: "var(--color-warning)",
-                  },
-                }}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMore />}
-                  aria-controls="items-list-content"
-                  id="items-list-header"
-                  className="font-semibold rounded-md"
-                  sx={{
-                    "&:hover": {
-                      color: "var(--color-warning)",
-                    },
-                    "&.Mui-expanded": {
-                      minHeight: 36,
-                    },
-                    "& .MuiAccordionSummary-content": { m: 1 },
-                  }}
-                >
-                  Se ofrece
-                </AccordionSummary>
+            <section>
+              {lists.map((list) => {
+                const items = data.offered?.[list.id as keyof TypeOffered];
 
-                <AccordionDetails>
-                  <motion.ol
-                    className="list-disc list-inside"
-                    {...variants_list}
-                  >
-                    {data.info.items.map((item, i) => (
-                      <motion.li key={i} variants={variants_sections}>
-                        {item}
-                      </motion.li>
-                    ))}
-                  </motion.ol>
-                </AccordionDetails>
-              </Accordion>
-            )}
+                if (items) {
+                  return (
+                    <Accordion
+                      key={list.id}
+                      className="sm:w-fit"
+                      title="Ver más"
+                      sx={{
+                        boxShadow: "none",
+                        "&::before": {
+                          display: "none",
+                        },
+                        border: "4px solid var(--color-primary)",
+                        borderRadius: "10px",
+                        "&:hover": {
+                          borderColor: "var(--color-warning)",
+                        },
+                      }}
+                    >
+                      <AccordionSummary
+                        expandIcon={<ExpandMore />}
+                        aria-controls="items-list-content"
+                        id="items-list-header"
+                        className="font-semibold rounded-md"
+                        sx={{
+                          "&:hover": {
+                            color: "var(--color-warning)",
+                          },
+                          "&.Mui-expanded": {
+                            minHeight: 36,
+                          },
+                          "& .MuiAccordionSummary-content": { m: 1 },
+                        }}
+                      >
+                        {list.label}
+                      </AccordionSummary>
+
+                      <AccordionDetails>
+                        <motion.ol
+                          className="list-disc list-inside"
+                          {...variants_list}
+                        >
+                          {items.map((item, i) => (
+                            <motion.li key={i} variants={variants_sections}>
+                              {item}
+                            </motion.li>
+                          ))}
+                        </motion.ol>
+                      </AccordionDetails>
+                    </Accordion>
+                  );
+                }
+              })}
+            </section>
           </motion.section>
 
           <Divider />
@@ -222,19 +230,22 @@ export default function ItemView() {
             <motion.ol {...variants_list}>
               {Object.entries(OBJ_CONTACTS).map(([id, item_data]) => {
                 const val = data.contact[id as keyof typeof data.contact];
-                if (val) {
-                  const href =
-                    id === "whatsapp"
-                      ? "https://api.whatsapp.com/send?phone=54" +
-                        val.label +
-                        "&text=Hola. Encontre el contacto en Tucumercio."
-                      : id === "mail"
-                      ? "mailto:" + val.label
-                      : val.href || "#";
 
-                  // if (["ig", "fb", "x"].includes(id)) {
-                  //   val.label = "@" + val.label;
-                  // }
+                if (val) {
+                  let arroba = false;
+                  let href = item_data.link
+                    ? val.href
+                    : item_data.base
+                    ? item_data.base + val.label
+                    : "";
+
+                  if (["ig", "x", "yt"].includes(id)) arroba = true;
+
+                  if (id === "fb" && val.href) {
+                    if (val.href) href = val.href;
+                    if (val.label) arroba = true;
+                  }
+
                   return (
                     <motion.li
                       key={id}
@@ -252,17 +263,21 @@ export default function ItemView() {
                         />
                       )}{" "}
                       {item_data.label}:{" "}
-                      <a
-                        href={href}
-                        title={"Ir a " + item_data.label}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:underline"
-                      >
-                        {["ig", "fb", "x"].includes(id) && "@"}
-                        {val.label || "Link"}{" "}
-                        <OpenInNewIcon fontSize="inherit" />
-                      </a>
+                      {href ? (
+                        <a
+                          href={href}
+                          title={"Ir a " + item_data.label}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline"
+                        >
+                          {arroba ? "@" : ""}
+                          {val.label || "Link"}
+                          <OpenInNewIcon fontSize="inherit" />
+                        </a>
+                      ) : (
+                        val.label
+                      )}
                     </motion.li>
                   );
                 }

@@ -1,10 +1,8 @@
-import { OBJ_CATEGORIES } from "../../consts/objectsLists";
-
 import { Button } from "@mui/material";
 import { Link } from "react-router";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation, Pagination, Autoplay } from "swiper/modules";
 // @ts-ignore
 import "swiper/css";
 // @ts-ignore
@@ -21,7 +19,8 @@ export default function SliderCategorie({
   className = "",
   id = "products",
 }: IntfProps) {
-  const data = OBJ_CATEGORIES[id];
+  const data = false;
+  // OBJ_CATEGORIES[id];
   if (!data) {
     return (
       <article className="w-full h-52 border-8 border-primary rounded-md flex items-center justify-center uppercase my-2">
@@ -50,10 +49,10 @@ export default function SliderCategorie({
           },
         }}
       >
-        {data.label}
+        {/* {data.label} */}
       </Button>
 
-      <div className="w-full overflow-hidden relative px-8 text-2xl">
+      {/* <div className="w-full overflow-hidden relative px-8 text-2xl">
         <Swiper
           className="w-full h-52"
           spaceBetween={10}
@@ -129,7 +128,7 @@ export default function SliderCategorie({
               );
             })}
         </Swiper>
-      </div>
+      </div> */}
     </article>
   );
 }

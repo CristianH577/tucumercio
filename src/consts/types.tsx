@@ -22,6 +22,8 @@ export type TypeObjList = {
     label: string;
     icon?: TypeIcon;
     color?: string;
+    base?: string;
+    link?: boolean;
   };
 };
 
@@ -35,23 +37,45 @@ export type TypeObjCategorie = {
 };
 
 export type TypeContactLink = {
-  label: string;
+  label?: string;
   href?: string;
 };
 export type TypeSchedule = (number | string | null)[];
 
+export type TypeSubCategories = {
+  [key: string]: TypeSubCategories | undefined;
+};
+export type TypeCategories = {
+  prod?: TypeSubCategories;
+  serv?: TypeSubCategories;
+};
+
+export type TypeObjCatData = {
+  [key: string]: {
+    label: string;
+    labelShort?: string;
+    icon?: TypeIcon;
+  };
+};
+
+export type TypeOffered = {
+  items?: string[];
+  itemsNo?: string[];
+  services?: string[];
+  servicesNo?: string[];
+};
+
 export type TypeItemDb = {
   id: number;
-  categorie: string[];
+  categories: TypeCategories;
   info: {
     label: string;
     logo?: boolean;
     desc?: string;
     type: keyof typeof OBJ_TYPES_STORE;
     schedule?: TypeSchedule[];
-    items?: string[];
-    itemsNo?: string[];
   };
+  offered?: TypeOffered;
   contact: {
     telephone?: TypeContactLink;
     whatsapp?: TypeContactLink;
@@ -82,7 +106,7 @@ export type TypeFiltersValues = {
   text: string;
   ubication: string;
   orderBy: string;
-  categories: string[];
+  categories: TypeCategories;
   contact: string[];
   attributes: string[];
 };

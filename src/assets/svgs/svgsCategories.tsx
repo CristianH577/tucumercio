@@ -17,10 +17,10 @@ export const SvgMasonry = (props: SVGProps<SVGSVGElement>) => (
 export const SvgIronwork = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    xmlSpace="preserve"
     viewBox="0 0 512 512"
     width={24}
     height={24}
+    fill="currentColor"
     {...props}
     className={"inline-flex" + (props.className ? " " + props.className : "")}
   >
@@ -65,6 +65,7 @@ export const SvgJewelry = (props: SVGProps<SVGSVGElement>) => (
     viewBox="0 0 512 512"
     width={24}
     height={24}
+    fill="currentColor"
     {...props}
     className={"inline-flex" + (props.className ? " " + props.className : "")}
   >

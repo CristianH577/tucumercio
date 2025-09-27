@@ -1,4 +1,4 @@
-import type { TypeObjCategorie, TypeObjList } from "./types";
+import type { TypeObjCatData, TypeObjList } from "./types";
 
 import { SVGLogoPaypal, SVGMercadoLibre } from "../assets/svgs/svgsLogos";
 
@@ -13,14 +13,11 @@ import {
 
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import PhoneIcon from "@mui/icons-material/Phone";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import XIcon from "@mui/icons-material/X";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LanguageIcon from "@mui/icons-material/Language";
-import LocationPinIcon from "@mui/icons-material/LocationPin";
-import ClassIcon from "@mui/icons-material/Class";
 import BookOnlineOutlinedIcon from "@mui/icons-material/BookOnlineOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MopedOutlinedIcon from "@mui/icons-material/MopedOutlined";
@@ -28,8 +25,12 @@ import LockPersonOutlinedIcon from "@mui/icons-material/LockPersonOutlined";
 import BallotOutlinedIcon from "@mui/icons-material/BallotOutlined";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import SendToMobileOutlinedIcon from "@mui/icons-material/SendToMobileOutlined";
-import CottageIcon from "@mui/icons-material/Cottage";
-import MailIcon from "@mui/icons-material/Mail";
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import AutoStoriesOutlinedIcon from "@mui/icons-material/AutoStoriesOutlined";
+import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
+import RoomOutlinedIcon from "@mui/icons-material/RoomOutlined";
+import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
+import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 
 import ChairIcon from "@mui/icons-material/Chair";
 import PetsIcon from "@mui/icons-material/Pets";
@@ -49,7 +50,6 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import LaptopIcon from "@mui/icons-material/Laptop";
-import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import CelebrationIcon from "@mui/icons-material/Celebration";
 import PaletteIcon from "@mui/icons-material/Palette";
@@ -64,7 +64,6 @@ import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import PlumbingIcon from "@mui/icons-material/Plumbing";
 import HomeRepairServiceIcon from "@mui/icons-material/HomeRepairService";
 import AirplaneTicketIcon from "@mui/icons-material/AirplaneTicket";
-import RoomServiceIcon from "@mui/icons-material/RoomService";
 
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin";
@@ -88,180 +87,329 @@ import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import ComputerIcon from "@mui/icons-material/Computer";
 import TvIcon from "@mui/icons-material/Tv";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
-import ReceiptIcon from "@mui/icons-material/Receipt";
+import BookIcon from "@mui/icons-material/Book";
+import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 // import ContentCutIcon from "@mui/icons-material/ContentCut";
 // import LocalLaundryServiceIcon from "@mui/icons-material/LocalLaundryService";
+import FlatwareIcon from "@mui/icons-material/Flatware";
+import BakeryDiningIcon from "@mui/icons-material/BakeryDining";
+import PropaneTankIcon from "@mui/icons-material/PropaneTank";
+import AirlineSeatReclineNormalIcon from "@mui/icons-material/AirlineSeatReclineNormal";
+import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
+import ContentCutIcon from "@mui/icons-material/ContentCut";
+import ChildCareIcon from "@mui/icons-material/ChildCare";
+import AssistWalkerIcon from "@mui/icons-material/AssistWalker";
+import AirlineSeatFlatIcon from "@mui/icons-material/AirlineSeatFlat";
+import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 
-export const OBJ_CATEGORIES: TypeObjCategorie = {
-  products: {
-    label: "Tiendas",
-    subs: {
-      animalPet: {
-        label: "Animales & mascotas",
-        icon: PetsIcon,
-      },
-      alimentosBebidas: {
-        label: "Alimentos & Bebidas",
-        icon: ShoppingCartIcon,
-        subs: {
-          almacen: { icon: LocalConvenienceStoreIcon },
-          // carniceria: {},
-          delivery: { icon: DeliveryDiningIcon },
-          // forrajeria: {},
-          // verduleria: {},
-          pescaderia: { icon: SetMealIcon },
-          // polleria: {},
-          otheralimentosBebidas: { label: "Otros", icon: MoreHorizIcon },
-        },
-      },
-      artesanias: { icon: PaletteIcon },
-      autopartes: { icon: BuildIcon },
-      casaJardin: { label: "Casa & Jardin", icon: DeckIcon },
-      deportes: { icon: SportsSoccerIcon },
-      apparel: {
-        label: "Indumentaria",
-        icon: CheckroomIcon,
-        subs: {
-          accessories: { label: "Accesorios", icon: SvgAccesories },
-          shoes: { label: "Calzado", icon: SvgShoes },
-          jewelry: { label: "Joyeria", icon: SvgJewelry },
-          cloths: { label: "Ropa", icon: SvgCloths },
-          otherapparel: { label: "Otros", icon: MoreHorizIcon },
-        },
-      },
-      juegosJuguetes: { label: "Juegos & Juguetes", icon: ToysIcon },
-      libreria: { icon: AttachFileIcon },
-      furniture: { label: "Muebles", icon: ChairIcon },
-      businessIndustrial: {
-        label: "Negocios & Industria",
-        icon: FactoryIcon,
-        subs: {
-          construction: { label: "Construcción", icon: HardwareIcon },
-          electricidad: { icon: CableIcon },
-          ferreteria: { icon: HandymanIcon },
-          plomeriaGas: { label: "Plomeria & Gas", icon: PlumbingIcon },
-          otherbusinessIndustrial: { label: "Otros", icon: MoreHorizIcon },
-        },
-      },
-      tecnologia: {
-        icon: LaptopIcon,
-        // subs: {
-        //   celulares: {},
-        //   computacion: {},
-        //   electrodomesticos: {},
-        //   othertecnologia: { label: "Otros" },
-        // },
-      },
-      saludBelleza: { label: "Salud & Belleza", icon: FavoriteIcon },
-      othersProducts: { label: "Otros", icon: InventoryIcon },
-    },
+export const OBJ_CAT_STRUCTURE = {
+  prod: [
+    "prod_am",
+    "prod_albe",
+    "prod_art",
+    "prod_aut",
+    "prod_cj",
+    "prod_dep",
+    "prod_ind",
+    "prod_jj",
+    "prod_lib",
+    "prod_mue",
+    "prod_nein",
+    "prod_reg",
+    "prod_tecno",
+    "prod_sb",
+    "prod_others",
+  ],
+  serv: [
+    "serv_ent",
+    "serv_trans",
+    "serv_cat",
+    "serv_consman",
+    "serv_cuid",
+    "serv_edu",
+    "serv_gar",
+    "serv_limp",
+    "serv_prog",
+    "serv_rep",
+    "serv_sabe",
+    "serv_tur",
+    "serv_sam",
+    "serv_others",
+  ],
+
+  prod_albe: [
+    "prod_albe_alm",
+    "prod_albe_del",
+    "prod_albe_pesc",
+    "prod_albe_others",
+    "prod_albe_pare",
+  ],
+  prod_cj: ["prod_cj_bz", "prod_cj_jar", "prod_cj_others"],
+  prod_ind: [
+    "prod_ind_acc",
+    "prod_ind_cal",
+    "prod_ind_joy",
+    "prod_ind_ropa",
+    "prod_ind_others",
+  ],
+  prod_nein: [
+    "prod_nein_bul",
+    "prod_nein_cons",
+    "prod_nein_desc",
+    "prod_nein_elec",
+    "prod_nein_ferr",
+    "prod_nein_plogas",
+    "prod_nein_others",
+  ],
+  prod_tecno: [
+    "prod_tecno_cel",
+    "prod_tecno_com",
+    "prod_tecno_electro",
+    "prod_tecno_others",
+  ],
+
+  serv_ent: ["serv_ent_ani", "serv_ent_auvi", "serv_ent_others"],
+  serv_trans: [
+    "serv_trans_cad",
+    "serv_trans_mud",
+    "serv_trans_pers",
+    "serv_trans_others",
+  ],
+  serv_consman: [
+    "serv_consman_alb",
+    "serv_consman_carp",
+    "serv_consman_elec",
+    "serv_consman_herr",
+    "serv_consman_gas",
+    "serv_consman_plo",
+    "serv_consman_pint",
+    "serv_consman_others",
+  ],
+  serv_cuid: [
+    "serv_cuid_ni",
+    "serv_cuid_anc",
+    "serv_cuid_per",
+    "serv_cuid_others",
+  ],
+  serv_edu: ["serv_edu_esc", "serv_edu_uni", "serv_edu_mus", "serv_edu_others"],
+  serv_rep: [
+    "serv_rep_cel",
+    "serv_rep_comp",
+    "serv_rep_elec",
+    "serv_rep_veh",
+    "serv_rep_others",
+  ],
+  serv_sam: ["serv_sam_vet", "serv_sam_pel", "serv_sam_pas", "serv_sam_others"],
+};
+export const OBJ_CATEGORIES_DATA: TypeObjCatData = {
+  prod: {
+    label: "Tienda",
   },
-  services: {
+  serv: {
     label: "Servicios",
-    subs: {
-      artEntertaiment: {
-        label: "Arte & Entretenimiento",
-        labelShort: "Arte & Entret.",
-        icon: NightlifeIcon,
-        subs: {
-          animaciones: { icon: CelebrationIcon },
-          audiovisuales: { icon: AddPhotoAlternateIcon },
-          // dj: {},
-          otherartEntertaiment: { label: "Otros", icon: MoreHorizIcon },
-        },
-      },
-      cadeteria: { icon: MopedIcon },
-      catering: { icon: TapasIcon },
-      constructionMaintenance: {
-        label: "Construccion & Mantenimiento",
-        labelShort: "Construccion & Mant.",
-        icon: HomeRepairServiceIcon,
-        subs: {
-          mansonry: { label: "Albañilería", icon: SvgMasonry },
-          carpentry: { label: "Carpintería", icon: CarpenterIcon },
-          electricity: { label: "Electricidad", icon: ElectricalServicesIcon },
-          // gas: { label: "Gasista" },
-          ironwork: { label: "Herrería", icon: SvgIronwork },
-          plumbing: { label: "Gas & Plomería", icon: PlumbingIcon },
-          painting: { label: "Pintura", icon: FormatPaintIcon },
-          otherconstructionMaintenance: {
-            label: "Otros",
-            icon: MoreHorizIcon,
-          },
-        },
-      },
-      educacion: {
-        icon: AutoStoriesIcon,
-        subs: {
-          // primaria: {},
-          // secundaria: {},
-          escolar: { icon: LocalLibraryIcon },
-          universitaria: { icon: SchoolIcon },
-          instrumentosMusicales: {
-            label: "Instrumentos musicales",
-            icon: MusicNoteIcon,
-          },
-          othereducation: { label: "Otros", icon: MoreHorizIcon },
-        },
-      },
-      garage: { icon: GarageIcon },
-      // laundry: { label: "Lavanderia", icon: LocalLaundryServiceIcon },
-      cleaning: { label: "Limpieza", icon: CleaningServicesIcon },
-      programming: { label: "Programación", icon: TerminalIcon },
-      reparacion: {
-        icon: ConstructionIcon,
-        subs: {
-          celulares: { icon: PhoneIphoneIcon },
-          computadoras: { icon: ComputerIcon },
-          electrodomesticos: { icon: TvIcon },
-          vehiculos: { icon: CarRepairIcon },
-          otherreparacion: { label: "Otros", icon: MoreHorizIcon },
-        },
-      },
-      healthBeauty: { label: "Salud & Belleza", icon: FavoriteIcon },
-      // tailoring: { label: "Sastrería", icon: ContentCutIcon },
-      transport: { label: "Transporte", icon: AirportShuttleIcon },
-      turismo: { icon: AirplaneTicketIcon },
-      veterinary: { label: "Veterinaria", icon: PetsIcon },
-      othersServices: { label: "Otros", icon: RoomServiceIcon },
-    },
   },
+
+  prod_am: {
+    label: "Animales & mascotas",
+    icon: PetsIcon,
+  },
+  prod_albe: {
+    label: "Alimentos & Bebidas",
+    icon: ShoppingCartIcon,
+  },
+  prod_art: {
+    label: "Arte & Artesanias",
+    icon: PaletteIcon,
+  },
+  prod_aut: {
+    label: "Autopartes & mecánica",
+    icon: BuildIcon,
+  },
+  prod_cj: {
+    label: "Casa & Jardin",
+    icon: DeckIcon,
+  },
+  prod_dep: {
+    label: "Deportes",
+    icon: SportsSoccerIcon,
+  },
+  prod_ind: {
+    label: "Indumentaria",
+    icon: CheckroomIcon,
+  },
+  prod_jj: {
+    label: "Juegos & Juguetes",
+    icon: ToysIcon,
+  },
+  prod_lib: {
+    label: "Librería",
+    icon: AttachFileIcon,
+  },
+  prod_mue: {
+    label: "Muebles",
+    icon: ChairIcon,
+  },
+  prod_nein: {
+    label: "Negocios & Industria",
+    icon: FactoryIcon,
+  },
+  prod_reg: { label: "Regalaría" },
+  prod_tecno: {
+    label: "Tecnología",
+    icon: LaptopIcon,
+  },
+  prod_sb: {
+    label: "Salud & Belleza",
+    icon: FavoriteIcon,
+  },
+  prod_others: {
+    label: "Otros",
+    icon: InventoryIcon,
+  },
+
+  prod_albe_alm: {
+    label: "Almacén",
+    icon: LocalConvenienceStoreIcon,
+  },
+  prod_albe_del: {
+    label: "Delivery",
+    icon: DeliveryDiningIcon,
+  },
+  prod_albe_pesc: {
+    label: "Pescadería",
+    icon: SetMealIcon,
+  },
+  prod_albe_others: {
+    label: "Otros",
+    icon: MoreHorizIcon,
+  },
+  prod_albe_pare: { label: "Panadería & Repostería", icon: BakeryDiningIcon },
+
+  prod_cj_bz: { label: "Bazar" },
+  prod_cj_jar: { label: "Jardinería" },
+  prod_cj_others: { label: "Otros", icon: MoreHorizIcon },
+
+  prod_ind_acc: { label: "Accesorios", icon: SvgAccesories },
+  prod_ind_cal: { label: "Calzado", icon: SvgShoes },
+  prod_ind_joy: { label: "Joyeria", icon: SvgJewelry },
+  prod_ind_ropa: { label: "Ropa", icon: SvgCloths },
+  prod_ind_others: { label: "Otros", icon: MoreHorizIcon },
+
+  prod_nein_bul: { label: "Bulonería" },
+  prod_nein_cons: { label: "Construcción", icon: HardwareIcon },
+  prod_nein_desc: { label: "Descartables", icon: FlatwareIcon },
+  prod_nein_elec: { label: "Electricidad", icon: CableIcon },
+  prod_nein_ferr: { label: "Ferretería", icon: HandymanIcon },
+  prod_nein_plogas: { label: "Plomería & Gas", icon: PlumbingIcon },
+  prod_nein_others: { label: "Otros", icon: MoreHorizIcon },
+
+  prod_tecno_cel: { label: "Celulares" },
+  prod_tecno_com: { label: "Computación" },
+  prod_tecno_electro: { label: "Electrodomésticos" },
+  prod_tecno_others: { label: "Otros", icon: MoreHorizIcon },
+
+  serv_ent: {
+    label: "Arte & Entretenimiento",
+    labelShort: "Arte & Entret.",
+    icon: NightlifeIcon,
+  },
+  serv_trans: { label: "Transporte", icon: LocalShippingIcon },
+  serv_cat: { label: "Catering", icon: TapasIcon },
+  serv_consman: {
+    label: "Construcción & Mantenimiento",
+    labelShort: "Construcción & Mant.",
+    icon: HomeRepairServiceIcon,
+  },
+  serv_cuid: { label: "Cuidado", icon: HealthAndSafetyIcon },
+  serv_edu: { label: "Educación", icon: AutoStoriesIcon },
+  serv_gar: { label: "Garage", icon: GarageIcon },
+  serv_limp: { label: "Limpieza", icon: CleaningServicesIcon },
+  serv_prog: { label: "Programación", icon: TerminalIcon },
+  serv_rep: { label: "Reparación", icon: ConstructionIcon },
+  serv_sabe: { label: "Salud & Belleza", icon: FavoriteIcon },
+  serv_tur: { label: "Turismo", icon: AirplaneTicketIcon },
+  serv_sam: { label: "Animales & Mascotas", icon: PetsIcon },
+  serv_others: { label: "Otros", icon: MoreHorizIcon },
+
+  serv_ent_ani: { label: "Animaciones", icon: CelebrationIcon },
+  serv_ent_auvi: { label: "Audiovisulaes", icon: AddPhotoAlternateIcon },
+  serv_ent_others: { label: "Otros", icon: MoreHorizIcon },
+
+  serv_cuid_ni: { label: "Niños", icon: ChildCareIcon },
+  serv_cuid_anc: { label: "Ancianos", icon: AssistWalkerIcon },
+  serv_cuid_per: { label: "Personas", icon: AirlineSeatFlatIcon },
+  serv_cuid_others: { label: "Otros", icon: MoreHorizIcon },
+
+  serv_trans_cad: { label: "Cadeteria", icon: MopedIcon },
+  serv_trans_mud: { label: "Mudanzas", icon: LocalShippingIcon },
+  serv_trans_pers: { label: "Personas", icon: AirlineSeatReclineNormalIcon },
+  serv_trans_others: { label: "Otros", icon: MoreHorizIcon },
+
+  serv_consman_alb: { label: "Albañilería", icon: SvgMasonry },
+  serv_consman_carp: { label: "Carpintería", icon: CarpenterIcon },
+  serv_consman_elec: { label: "Electricidad", icon: ElectricalServicesIcon },
+  serv_consman_herr: { label: "Herrería", icon: SvgIronwork },
+  serv_consman_gas: { label: "Gas", icon: PropaneTankIcon },
+  serv_consman_plo: { label: "Plomería", icon: PlumbingIcon },
+  serv_consman_pint: { label: "Pintura", icon: FormatPaintIcon },
+  serv_consman_others: { label: "Otros", icon: MoreHorizIcon },
+
+  serv_edu_esc: { label: "Escolar", icon: LocalLibraryIcon },
+  serv_edu_uni: { label: "Universitaria", icon: SchoolIcon },
+  serv_edu_mus: { label: "Instrumentos musicales", icon: MusicNoteIcon },
+  serv_edu_others: { label: "Otros", icon: MoreHorizIcon },
+
+  serv_rep_cel: { label: "Celulares", icon: PhoneIphoneIcon },
+  serv_rep_comp: { label: "Computación", icon: ComputerIcon },
+  serv_rep_elec: { label: "Electrodomésticos", icon: TvIcon },
+  serv_rep_veh: { label: "Vehículos", icon: CarRepairIcon },
+  serv_rep_others: { label: "Otros", icon: MoreHorizIcon },
+
+  serv_sam_vet: { label: "Veterinaria", icon: LocalHospitalIcon },
+  serv_sam_pel: { label: "Peluquearía", icon: ContentCutIcon },
+  serv_sam_pas: { label: "Paseadores" },
+  serv_sam_others: { label: "Otros", icon: MoreHorizIcon },
 };
 
 export const OBJ_TYPES_STORE: TypeObjList = {
-  store: {
-    label: "Tienda",
-    icon: StorefrontIcon,
-  },
-  fabricate: {
-    label: "Fábrica",
-    icon: FactoryIcon,
+  company: {
+    label: "Empresa",
+    icon: BusinessIcon,
   },
   distribuitor: {
     label: "Distribuidor",
     icon: LocalShippingIcon,
   },
-  informal: {
-    label: "Profesión",
-    icon: HandymanIcon,
+  entrepreneurship: {
+    label: "Emprendimiento",
+    icon: PsychologyIcon,
   },
-  company: {
-    label: "Compañia",
-    icon: BusinessIcon,
+  fabricate: {
+    label: "Fábrica",
+    icon: FactoryIcon,
   },
   franchise: {
     label: "Franquicia",
     icon: AddBusinessIcon,
   },
+  store: {
+    label: "Tienda",
+    icon: StorefrontIcon,
+  },
+  informal: {
+    label: "Profesión",
+    icon: HandymanIcon,
+  },
+  profesional: {
+    label: "Profesional",
+    icon: BookIcon,
+  },
   tecnic: {
     label: "Técnico",
     icon: SchoolIcon,
   },
-  entrepreneurship: {
-    label: "Emprendimiento",
-    icon: PsychologyIcon,
-  },
 };
+
 export const OBJ_ATTRIBUTES: TypeObjList = {
   physicalStore: {
     label: "Tienda física",
@@ -293,19 +441,19 @@ export const OBJ_ATTRIBUTES: TypeObjList = {
   },
   nacShipping: {
     label: "Encomiendas",
-    icon: LocalShippingIcon,
+    icon: LocalShippingOutlinedIcon,
   },
   catalog: {
     label: "Catálogo",
-    icon: ClassIcon,
+    icon: AutoStoriesOutlinedIcon,
   },
   homeWork: {
     label: "Trabajo en domicilio",
-    icon: CottageIcon,
+    icon: CottageOutlinedIcon,
   },
   bill: {
     label: "Factura",
-    icon: ReceiptIcon,
+    icon: ReceiptOutlinedIcon,
   },
 };
 export const OBJ_CONTACTS: TypeObjList = {
@@ -313,50 +461,59 @@ export const OBJ_CONTACTS: TypeObjList = {
     label: "Whatsapp",
     icon: WhatsAppIcon,
     color: "#25d366",
+    base: "https://api.whatsapp.com/send?phone=54",
   },
   telephone: {
     label: "Teléfono",
-    icon: PhoneIcon,
+    icon: LocalPhoneOutlinedIcon,
     color: "#002f5c",
   },
   web: {
     label: "Sitio web",
     icon: LanguageIcon,
     color: "#7bb4e3",
+    link: true,
   },
   catalogLink: {
     label: "Catálogo",
-    icon: ClassIcon,
+    icon: AutoStoriesOutlinedIcon,
     color: "#e57c49",
+    link: true,
   },
   googleMaps: {
     label: "Google Maps",
-    icon: LocationPinIcon,
+    icon: RoomOutlinedIcon,
     color: "#EA4335",
-  },
-  ig: {
-    label: "Instagram",
-    icon: InstagramIcon,
-    color: "#962fbf",
+    link: true,
   },
   fb: {
     label: "Facebook",
     icon: FacebookIcon,
     color: "#1877F2",
+    base: "https://www.facebook.com/",
+  },
+  ig: {
+    label: "Instagram",
+    icon: InstagramIcon,
+    color: "#962fbf",
+    base: "https://www.instagram.com/",
   },
   x: {
     label: "X(Twitter)",
     icon: XIcon,
-  },
-  mail: {
-    label: "Correo",
-    icon: MailIcon,
-    color: "#848081",
+    base: "https://x.com/",
   },
   yt: {
     label: "YouTube",
     icon: YouTubeIcon,
     color: "#FF0000",
+    base: "https://www.youtube.com/@",
+  },
+  mail: {
+    label: "Correo",
+    icon: MailOutlinedIcon,
+    color: "#848081",
+    base: "mailto:",
   },
 };
 export const OBJ_PAYMENTS: TypeObjList = {
@@ -367,10 +524,6 @@ export const OBJ_PAYMENTS: TypeObjList = {
   transfer: {
     label: "Transferencia",
     icon: AccountBalanceIcon,
-  },
-  mercadoPago: {
-    label: "Mercado Pago",
-    icon: SVGMercadoLibre,
   },
   walletOnline: {
     label: "Billetera virtual",
@@ -387,6 +540,10 @@ export const OBJ_PAYMENTS: TypeObjList = {
   cardDebit: {
     label: "Tarjeta de débito",
     icon: CreditCardIcon,
+  },
+  mercadoPago: {
+    label: "Mercado Pago",
+    icon: SVGMercadoLibre,
   },
   paypal: {
     label: "Paypal",
@@ -421,7 +578,7 @@ export const OBJ_UBICATION: TypeObjList = {
 };
 export const OBJ_LOCALIDADES = {
   burruyacu: "Burruyacú",
-  capital: "Capital(S.M.T.)",
+  capital: "Capital(SMT)",
   chicligasta: "Chicligasta",
   cruzalta: "Cruz Alta",
   famailla: "Famaillá",

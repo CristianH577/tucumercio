@@ -8,7 +8,7 @@ type TypeProps = {
   onAdd: (val: TypeSchedule[]) => void;
 };
 
-const schedule_value_default = [1, null, "08:00", "13:00", null, null];
+const schedule_value_default = [1, 5, "08:00", "13:00", null, null];
 
 export default function InputAddShedule({ currentVal = [], onAdd }: TypeProps) {
   const [scheduleValues, setScheduleValues] = useState<TypeSchedule>(

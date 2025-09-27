@@ -1,11 +1,10 @@
 import database from "../assets/database.json";
-import type { TypeItemDb, TypeSchedule } from "../consts/types";
+import type { TypeCategories, TypeItemDb, TypeSchedule } from "../consts/types";
 import {
   OBJ_ATTRIBUTES,
   OBJ_CONTACTS,
   OBJ_LOCALIDADES,
   OBJ_PAYMENTS,
-  OBJ_TYPES_STORE,
 } from "../consts/objectsLists";
 
 import { useState } from "react";
@@ -28,37 +27,42 @@ import SelectCategorie from "../components/SelectCategorie";
 
 const fv_add_default: TypeItemDb = {
   id: 0,
-  categorie: ["products"],
+  categories: {
+    prod: {},
+  },
   info: {
     label: "",
     logo: false,
     type: "store",
     desc: "",
-    items: [],
-    itemsNo: [],
     schedule: [],
   },
   contact: {},
-  ubication: { department: "capital" },
+  ubication: { department: "capital", references: "" },
   attributes: [],
-  paymentMethods: [],
+  paymentMethods: ["cash"],
   tags: [],
 };
 
 export default function FormsView() {
   const [fvAdd, setFvAdd] = useState<TypeItemDb>(fv_add_default);
+  const [searchValues, setSearchValues] = useState({
+    id: "",
+    text: "",
+  });
+
+  // const types = {};
+  // fvAdd.categorie[0] === "services"
+  //   ? OBJ_TYPES_STORE.services
+  //   : OBJ_TYPES_STORE.products;
 
   const handleSend = () => {
     const fvAdd_ = structuredClone(fvAdd);
 
-    const last_id = database.at(-1)?.id || 0;
-    fvAdd_.id = last_id ? last_id + 1 : 0;
-
-    Object.values(fvAdd_.contact).map((val) => {
-      if (val.href && !val?.label) {
-        val.label = "Link";
-      }
-    });
+    if (!fvAdd_.id) {
+      const last_id = database.at(-1)?.id || 0;
+      fvAdd_.id = last_id ? last_id + 1 : 0;
+    }
 
     ["attributes", "paymentMethods", "tags"].forEach((key) => {
       // @ts-ignore
@@ -74,11 +78,57 @@ export default function FormsView() {
     if (!Object.keys(fvAdd_.contact).length) delete fvAdd_.contact;
     if (!fvAdd_.info.logo) delete fvAdd_.info.logo;
 
+    if (fvAdd_.ubication.references === "") delete fvAdd_.ubication.references;
+
     console.log(fvAdd_);
+  };
+
+  const handleSearchEdit = () => {
+    const id = searchValues.id;
+    if (id) {
+      const find = database.find((e) => e.id === Number(id));
+      if (find) {
+        setFvAdd(structuredClone(find));
+      }
+    }
   };
 
   return (
     <main className="p-2 xs:p-4 sm:p-6 space-y-8">
+      <section className="max-w-96">
+        <FormControl>
+          <FormLabel>Buscar</FormLabel>
+          <Input
+            placeholder="Nombre"
+            name="label"
+            endDecorator={
+              <Button variant="soft" onClick={handleSearchEdit}>
+                Editar
+              </Button>
+            }
+            value={searchValues.text}
+            onChange={(e) => {
+              setSearchValues({ ...searchValues, text: e.target.value });
+            }}
+          />
+        </FormControl>
+
+        <Input
+          type="number"
+          placeholder="ID"
+          name="serachID"
+          endDecorator={
+            <Button variant="soft" onClick={handleSearchEdit}>
+              Editar
+            </Button>
+          }
+          value={searchValues.id}
+          onChange={(e) => {
+            setSearchValues({ ...searchValues, id: e.target.value });
+          }}
+        />
+      </section>
+
       <section>
         <div className="mb-2">
           <h1>Básico</h1>
@@ -86,12 +136,12 @@ export default function FormsView() {
         </div>
 
         <article className="flex flex-col items-start gap-2">
-          <div className="flex flex-col gap-2 w-full">
+          <div className="flex flex-col gap-2 w-full max-w-80">
             <FormLabel>Categoria</FormLabel>
             <SelectCategorie
-              selected={fvAdd.categorie}
-              setSelected={(val: string[]) =>
-                setFvAdd({ ...fvAdd, categorie: val })
+              selected={fvAdd.categories}
+              setSelected={(val: TypeCategories) =>
+                setFvAdd({ ...fvAdd, categories: val })
               }
             />
           </div>
@@ -123,7 +173,7 @@ export default function FormsView() {
             <FormLabel htmlFor="select-type-button" id="select-type-label">
               Tipo de negocio
             </FormLabel>
-            <Select
+            {/* <Select
               placeholder="Seleccione"
               name="type"
               slotProps={{
@@ -140,12 +190,12 @@ export default function FormsView() {
                 setFvAdd(fvAdd_);
               }}
             >
-              {Object.entries(OBJ_TYPES_STORE).map(([id, val]) => (
+              {Object.entries(types).map(([id, val]) => (
                 <Option key={id} value={id}>
                   {val.icon && <val.icon />} {val.label}
                 </Option>
               ))}
-            </Select>
+            </Select> */}
           </FormControl>
 
           <FormLabel>Horarios</FormLabel>
@@ -301,7 +351,7 @@ export default function FormsView() {
               }}
             />
           </FormControl>
-          <InputAddToList
+          {/* <InputAddToList
             name="items"
             label="Se ofrece"
             placeholder="Producto/Servicio"
@@ -322,7 +372,7 @@ export default function FormsView() {
               fvAdd_.info.itemsNo = list;
               setFvAdd(fvAdd_);
             }}
-          />
+          /> */}
           <InputAddToList
             name="tags"
             label="Tags"
@@ -345,21 +395,45 @@ export default function FormsView() {
 
         <ol className="grid xs:grid-cols-[repeat(auto-fit,_minmax(220px,280px))] sm:grid-cols-[repeat(auto-fit,_minmax(200px,240px))] gap-4 md:gap-6 lg:gap-8">
           {Object.entries(OBJ_CONTACTS).map(([id, val]) => (
-            <li key={id}>
-              <FormControl>
-                <FormLabel>
-                  {val.icon && <val.icon />}
-                  {val.label}
-                </FormLabel>
+            <li key={id} className="space-y-2">
+              <h3 className="font-medium text-sm inline-flex items-center gap-0.5">
+                {val.icon && <val.icon />}
+                {val.label}
+              </h3>
+
+              {!val.link && (
+                <FormControl>
+                  <Input
+                    name={"label-" + id}
+                    placeholder="Etiqueta"
+                    startDecorator={
+                      ["ig", "fb", "x", "yt"].includes(id) ? "@" : undefined
+                    }
+                    value={
+                      // @ts-ignore
+                      fvAdd.contact?.[id]?.label || ""
+                    }
+                    onChange={(e) => {
+                      const fvAdd_ = structuredClone(fvAdd);
+                      if (!(id in fvAdd_.contact)) {
+                        // @ts-ignore
+                        fvAdd_.contact[id] = {};
+                      }
+                      // @ts-ignore
+                      fvAdd_.contact[id].label = e.target.value;
+                      setFvAdd(fvAdd_);
+                    }}
+                  />
+                </FormControl>
+              )}
+
+              {((!val.base && id !== "telephone") || id === "fb") && (
                 <Input
-                  name={"label-" + id}
-                  placeholder="Etiqueta/nombre/arroba"
-                  startDecorator={
-                    ["ig", "fb", "x", "yt"].includes(id) ? "@" : undefined
-                  }
+                  name={"href-" + id}
+                  placeholder="Link"
                   value={
                     // @ts-ignore
-                    fvAdd.contact?.[id]?.label || ""
+                    fvAdd.contact?.[id]?.href || ""
                   }
                   onChange={(e) => {
                     const fvAdd_ = structuredClone(fvAdd);
@@ -368,29 +442,11 @@ export default function FormsView() {
                       fvAdd_.contact[id] = {};
                     }
                     // @ts-ignore
-                    fvAdd_.contact[id].label = e.target.value;
+                    fvAdd_.contact[id].href = e.target.value;
                     setFvAdd(fvAdd_);
                   }}
                 />
-              </FormControl>
-              <Input
-                name={"href-" + id}
-                placeholder="Link"
-                value={
-                  // @ts-ignore
-                  fvAdd.contact?.[id]?.href || ""
-                }
-                onChange={(e) => {
-                  const fvAdd_ = structuredClone(fvAdd);
-                  if (!(id in fvAdd_.contact)) {
-                    // @ts-ignore
-                    fvAdd_.contact[id] = {};
-                  }
-                  // @ts-ignore
-                  fvAdd_.contact[id].href = e.target.value;
-                  setFvAdd(fvAdd_);
-                }}
-              />
+              )}
             </li>
           ))}
         </ol>

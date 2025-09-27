@@ -31,6 +31,10 @@ export default function InputAddToList({
     onChange(items_filtered);
   };
 
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") handleAddItem();
+  };
+
   return (
     <FormControl>
       <FormLabel>{label}</FormLabel>
@@ -44,6 +48,7 @@ export default function InputAddToList({
         }
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
+        onKeyDown={onKeyDown}
       />
 
       <ol className="p-2 text-sm list-disc list-inside">

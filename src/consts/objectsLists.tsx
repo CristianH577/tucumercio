@@ -5,9 +5,11 @@ import { SVGLogoPaypal, SVGMercadoLibre } from "../assets/svgs/svgsLogos";
 import {
   SvgAccesories,
   SvgCloths,
+  SvgDogLeash,
   SvgIronwork,
   SvgJewelry,
   SvgMasonry,
+  SvgScrewNail,
   SvgShoes,
 } from "../assets/svgs/svgsCategories";
 
@@ -101,6 +103,11 @@ import ChildCareIcon from "@mui/icons-material/ChildCare";
 import AssistWalkerIcon from "@mui/icons-material/AssistWalker";
 import AirlineSeatFlatIcon from "@mui/icons-material/AirlineSeatFlat";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
+import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
+import YardIcon from "@mui/icons-material/Yard";
+import BlenderIcon from "@mui/icons-material/Blender";
+import SoupKitchenIcon from "@mui/icons-material/SoupKitchen";
+import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 
 export const OBJ_CAT_STRUCTURE = {
   prod: [
@@ -121,8 +128,8 @@ export const OBJ_CAT_STRUCTURE = {
     "prod_others",
   ],
   serv: [
+    "serv_sam",
     "serv_ent",
-    "serv_trans",
     "serv_cat",
     "serv_consman",
     "serv_cuid",
@@ -132,17 +139,17 @@ export const OBJ_CAT_STRUCTURE = {
     "serv_prog",
     "serv_rep",
     "serv_sabe",
+    "serv_trans",
     "serv_tur",
-    "serv_sam",
     "serv_others",
   ],
 
   prod_albe: [
     "prod_albe_alm",
     "prod_albe_del",
+    "prod_albe_pare",
     "prod_albe_pesc",
     "prod_albe_others",
-    "prod_albe_pare",
   ],
   prod_cj: ["prod_cj_bz", "prod_cj_jar", "prod_cj_others"],
   prod_ind: [
@@ -253,7 +260,7 @@ export const OBJ_CATEGORIES_DATA: TypeObjCatData = {
     label: "Negocios & Industria",
     icon: FactoryIcon,
   },
-  prod_reg: { label: "Regalaría" },
+  prod_reg: { label: "Regalaría", icon: CardGiftcardIcon },
   prod_tecno: {
     label: "Tecnología",
     icon: LaptopIcon,
@@ -285,8 +292,8 @@ export const OBJ_CATEGORIES_DATA: TypeObjCatData = {
   },
   prod_albe_pare: { label: "Panadería & Repostería", icon: BakeryDiningIcon },
 
-  prod_cj_bz: { label: "Bazar" },
-  prod_cj_jar: { label: "Jardinería" },
+  prod_cj_bz: { label: "Bazar", icon: SoupKitchenIcon },
+  prod_cj_jar: { label: "Jardinería", icon: YardIcon },
   prod_cj_others: { label: "Otros", icon: MoreHorizIcon },
 
   prod_ind_acc: { label: "Accesorios", icon: SvgAccesories },
@@ -295,7 +302,7 @@ export const OBJ_CATEGORIES_DATA: TypeObjCatData = {
   prod_ind_ropa: { label: "Ropa", icon: SvgCloths },
   prod_ind_others: { label: "Otros", icon: MoreHorizIcon },
 
-  prod_nein_bul: { label: "Bulonería" },
+  prod_nein_bul: { label: "Bulonería", icon: SvgScrewNail },
   prod_nein_cons: { label: "Construcción", icon: HardwareIcon },
   prod_nein_desc: { label: "Descartables", icon: FlatwareIcon },
   prod_nein_elec: { label: "Electricidad", icon: CableIcon },
@@ -303,9 +310,9 @@ export const OBJ_CATEGORIES_DATA: TypeObjCatData = {
   prod_nein_plogas: { label: "Plomería & Gas", icon: PlumbingIcon },
   prod_nein_others: { label: "Otros", icon: MoreHorizIcon },
 
-  prod_tecno_cel: { label: "Celulares" },
-  prod_tecno_com: { label: "Computación" },
-  prod_tecno_electro: { label: "Electrodomésticos" },
+  prod_tecno_cel: { label: "Celulares", icon: PhoneAndroidIcon },
+  prod_tecno_com: { label: "Computación", icon: ComputerIcon },
+  prod_tecno_electro: { label: "Electrodomésticos", icon: BlenderIcon },
   prod_tecno_others: { label: "Otros", icon: MoreHorizIcon },
 
   serv_ent: {
@@ -367,7 +374,7 @@ export const OBJ_CATEGORIES_DATA: TypeObjCatData = {
 
   serv_sam_vet: { label: "Veterinaria", icon: LocalHospitalIcon },
   serv_sam_pel: { label: "Peluquearía", icon: ContentCutIcon },
-  serv_sam_pas: { label: "Paseadores" },
+  serv_sam_pas: { label: "Paseadores", icon: SvgDogLeash },
   serv_sam_others: { label: "Otros", icon: MoreHorizIcon },
 };
 

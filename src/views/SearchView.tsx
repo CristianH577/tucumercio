@@ -203,28 +203,6 @@ export default function SearchView() {
               <FilterListIcon />
             </Button>
           </ButtonGroup>
-
-          <Button
-            onClick={() => {
-              const db_ = structuredClone(database);
-
-              db_.map((item) => {
-                const items = item.info.items;
-
-                if (items) {
-                  item.offered = {
-                    items: items,
-                  };
-                }
-
-                return item;
-              });
-
-              console.log(db_);
-            }}
-          >
-            test
-          </Button>
         </article>
 
         <span className="text-center text-neutral-400">

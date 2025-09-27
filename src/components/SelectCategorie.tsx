@@ -5,13 +5,15 @@ import type { TypeSubCategories, TypeCategories } from "../consts/types";
 import { Checkbox, List, ListItem, Option, Select } from "@mui/joy";
 
 interface IntfProps {
-  selected?: TypeCategories;
+  selected: TypeCategories;
   setSelected: (val: TypeCategories) => void;
+  className?: string;
 }
 
 export default function SelectCategorie({
   selected = {},
   setSelected,
+  className,
 }: IntfProps) {
   const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name;
@@ -74,7 +76,9 @@ export default function SelectCategorie({
   };
 
   return (
-    <div className="flex flex-wrap gap-2">
+    <div
+      className={"flex flex-wrap gap-2" + (className ? " " + className : "")}
+    >
       {/* <List
         orientation="horizontal"
         wrap
@@ -118,7 +122,7 @@ export default function SelectCategorie({
         return (
           <div
             key={id}
-            className="flex flex-col gap-2 border border-neutral-300 rounded-md p-2"
+            className="flex flex-col gap-2 border border-neutral-300 rounded-md p-2 w-fit max-w-full"
           >
             <Checkbox
               disableIcon

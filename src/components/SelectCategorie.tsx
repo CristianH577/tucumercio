@@ -53,23 +53,25 @@ export default function SelectCategorie({
     const selected_: TypeSubCategories = structuredClone(selected);
 
     Object.entries(selected).forEach(([id, val]) => {
-      selected_[id] = {};
+      if (values.some((val) => val.includes(id + "_"))) {
+        selected_[id] = {};
+        Object.keys(val).forEach((id2) => {
+          if (selected_[id]) {
+            selected_[id][id2] = {};
 
-      Object.keys(val).forEach((id2) => {
-        if (selected_[id]) {
-          selected_[id][id2] = {};
+            if (!values.includes("")) {
+              const cats3 = values.filter((e) => e.includes(id2 + "_"));
 
-          if (!values.includes("")) {
-            const cats3 = values.filter((e) => e.includes(id2));
-            if (cats3.length > 0) {
-              cats3.forEach((e) => {
-                if (selected_[id] && selected_[id][id2])
-                  selected_[id][id2][e] = {};
-              });
+              if (cats3.length > 0) {
+                cats3.forEach((id3) => {
+                  if (selected_[id] && selected_[id][id2])
+                    selected_[id][id2][id3] = {};
+                });
+              }
             }
           }
-        }
-      });
+        });
+      }
     });
 
     setSelected(selected_);
@@ -206,7 +208,7 @@ export default function SelectCategorie({
                       <ListItem
                         id={`select-group-${sub}`}
                         sticky
-                        className="font-semibold border-y border-neutral-300"
+                        className="font-semibold  !bg-primary !text-warning"
                       >
                         {cat2_data.icon && <cat2_data.icon />}
                         {cat2_data.label}

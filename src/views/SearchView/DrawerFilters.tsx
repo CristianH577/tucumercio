@@ -129,7 +129,7 @@ export default function DrawerFilters({
         animate="visible"
       >
         <motion.article
-          className="hidden flex-col gap-2 w-full px-2"
+          className="flex flex-col gap-2 w-full px-2"
           variants={variant_articles}
         >
           <h3 className="text-sm font-medium">Categoria</h3>

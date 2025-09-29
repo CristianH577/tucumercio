@@ -612,3 +612,10 @@ export const OBJ_SCHEDULE: { [key: number]: string } = {
   6: "Sábado",
   7: "Domingo",
 };
+
+export const LIST_OFFERED = [
+  { id: "items", label: "Artículos" },
+  { id: "itemsNo", label: "No se vende" },
+  { id: "services", label: "Servicios" },
+  { id: "servicesNo", label: "No se realiza" },
+];

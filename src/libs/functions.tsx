@@ -13,11 +13,23 @@ export const getHrefSearch = (filtersValues: TypeFiltersValues) => {
       case "page":
         break;
       case "categories":
-        const keys = Object.keys(filtersValues.categories);
-        if (keys.length > 0) {
-          const val = JSON.stringify(filtersValues.categories);
-          add.push([key, val]);
-        }
+        let text: string = "";
+        Object.entries(filtersValues.categories).forEach(([id, val], i) => {
+          text = text + (i > 0 ? "Z" : "") + id;
+
+          Object.entries(val).forEach(([id2, val2]) => {
+            text = text + "Y" + id2;
+
+            if (val2) {
+              Object.keys(val2).forEach((id3) => {
+                text = text + "X" + id3;
+              });
+            }
+          });
+        });
+
+        if (text) add.push([key, text]);
+
         break;
       case "contact":
       case "attributes":

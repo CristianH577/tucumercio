@@ -60,16 +60,84 @@ export default function SearchView() {
     setLoading(true);
     let items_: TypeItemDb[] = structuredClone(DB);
 
-    // if (filtersValues.categories) {
-    //   filtersValues.categories.forEach((key, i) => {
-    //     items_ = items_.filter((item) => {
-    //       if (key.includes("other") && !item.categorie[i]) {
-    //         return true;
-    //       }
-    //       return item.categorie.includes(key);
-    //     });
-    //   });
-    // }
+    if (filtersValues.categories) {
+      // filtersValues.categories.forEach((key, i) => {
+      //   items_ = items_.filter((item) => {
+      //     if (key.includes("other") && !item.categorie[i]) {
+      //       return true;
+      //     }
+      //     return item.categorie.includes(key);
+      //   });
+      // });
+      // let keys: string[] = [];
+      // Object.entries(filtersValues.categories).forEach(([id, val]) => {
+      //   // items_ = items_.filter((item) => id in item.categories);
+      //   keys = [...keys, id];
+
+      //   Object.entries(val).forEach(([id2, val2]) => {
+      //     keys = [...keys, id2];
+      //     // @ts-ignore
+      //     // items_ = items_.filter((item) => id2 in item.categories[id]);
+      //     Object.keys(val2).forEach((id3) => {
+      //       keys = [...keys, id3];
+      //     });
+      //   });
+      // });
+
+      const keys1 = Object.keys(filtersValues.categories);
+      let keys2: string[] = [];
+      let keys3: string[] = [];
+
+      if (keys1.length > 0) {
+        keys2 = Object.values(filtersValues.categories)
+          .map((val) => Object.keys(val))
+          .reduce((p, c) => [...p, ...c]);
+
+        if (keys2.length > 0) {
+          keys3 =
+            Object.values(filtersValues.categories)
+              .map((val) => Object.values(val))
+              .reduce((p, c) => [...p, ...c])
+              .map((val3) => val3 && Object.keys(val3))
+              .reduce((p, c) => c && p && [...p, ...c]) || [];
+        }
+
+        items_ = items_.filter((item) =>
+          Object.keys(item.categories).some((id) => keys1.includes(id))
+        );
+
+        if (keys2.length > 0) {
+          items_ = items_.filter((item) => {
+            let bool = false;
+
+            Object.values(item.categories).forEach((val) => {
+              if (!bool) {
+                bool = Object.keys(val).some((item2) => keys2.includes(item2));
+              }
+            });
+
+            if (bool) return item;
+          });
+
+          if (keys3.length > 0) {
+            items_ = items_.filter((item) => {
+              let bool = false;
+
+              Object.values(item.categories).forEach((val) => {
+                Object.values(val).forEach((val2) => {
+                  const ids3 = val2 ? Object.keys(val2) : [];
+                  if (!bool) {
+                    bool = ids3.some((item3) => keys3.includes(item3));
+                  }
+                });
+              });
+
+              if (bool) return item;
+            });
+          }
+        }
+      }
+    }
 
     if (filtersValues.ubication) {
       items_ = items_.filter(
@@ -139,7 +207,43 @@ export default function SearchView() {
         if (filters_.hasOwnProperty(key)) {
           switch (key) {
             case "categories":
-              filters_[key] = JSON.parse(paramsObj[key]);
+              // filters_[key] = JSON.parse(paramsObj[key]);
+              const val = paramsObj.categories;
+              if (val) {
+                const categories = {};
+                const cat1: string[] = paramsObj.categories.split("Z");
+                const cat2 = cat1.map((item) => item.split("Y"));
+                const cat3 = cat2.map((item) =>
+                  item.map((item2) => item2.split("X"))
+                );
+
+                cat3.forEach((array) => {
+                  const c = array[0];
+                  // @ts-ignore
+                  categories[c] = {};
+
+                  array.forEach((array2, i) => {
+                    if (array2.length > 1) {
+                      const c2 = array2[0];
+                      // @ts-ignore
+                      categories[c][c2] = {};
+
+                      array2.forEach((array3, j) => {
+                        if (j > 0) {
+                          // @ts-ignore
+                          categories[c][c2][array3] = {};
+                        }
+                      });
+                    } else if (i > 0) {
+                      // @ts-ignore
+                      categories[c][array2] = {};
+                    }
+                  });
+                });
+
+                filters_.categories = categories;
+              }
+
               break;
             case "contact":
             case "attributes":
@@ -222,7 +326,7 @@ export default function SearchView() {
           siblings={1}
           className="mt-4"
           classes={{
-            li: "!bg-primary !text-neutral data-[disabled=true]:!text-neutral-500 data-[active=true]:!bg-tertiary data-[active=true]:!text-secondary-ligth hover:!bg-tertiary hover:!text-secondary-ligth",
+            li: "!bg-primary !text-neutral data-[disabled=true]:!text-neutral-200 data-[disabled=true]:!bg-neutral-400 data-[active=true]:!bg-tertiary data-[active=true]:!text-secondary-ligth hover:!bg-tertiary hover:!text-secondary-ligth",
           }}
         />
       )}

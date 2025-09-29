@@ -2088,6 +2088,13 @@
         "Grilon",
         "Herramientas",
         "Artículos de ferretería"
+      ],
+      "services": [
+        "Corte con pantógrafo",
+        "Corte láser y con guillotina",
+        "Montajes industriales",
+        "Plegados de chapas",
+        "Trabajos según planos"
       ]
     }
   }

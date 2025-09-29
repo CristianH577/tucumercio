@@ -4,12 +4,12 @@ import { Link, useParams } from "react-router";
 
 import database from "../assets/database.json";
 import {
+  LIST_OFFERED,
   OBJ_ATTRIBUTES,
   OBJ_CONTACTS,
   OBJ_LOCALIDADES,
   OBJ_PAYMENTS,
   OBJ_SCHEDULE,
-  OBJ_UBICATION,
 } from "../consts/objectsLists";
 
 import {
@@ -44,13 +44,6 @@ const variants_list = {
   animate: "visible",
 };
 
-const lists = [
-  { id: "items", label: "Artículos" },
-  { id: "itemsNo", label: "No se vende" },
-  { id: "services", label: "Servicios" },
-  { id: "servicesNo", label: "No se realiza" },
-];
-
 export default function ItemView() {
   const { id } = useParams();
 
@@ -63,6 +56,11 @@ export default function ItemView() {
   const [data] = useState(getData());
 
   const schedule = data && data.info.schedule;
+
+  const calle =
+    data?.ubication?.street &&
+    data.ubication.street +
+      (data?.ubication?.number && " " + data.ubication.number);
 
   return (
     <motion.main
@@ -164,23 +162,19 @@ export default function ItemView() {
               </motion.ol>
             )}
 
-            <section>
-              {lists.map((list) => {
+            <section className="flex flex-col gap-2">
+              {LIST_OFFERED.map((list) => {
                 const items = data.offered?.[list.id as keyof TypeOffered];
 
                 if (items) {
                   return (
                     <Accordion
                       key={list.id}
-                      className="sm:w-fit"
+                      className="sm:w-fit !rounded-md"
                       title="Ver más"
+                      classes={{ expanded: "!m-0" }}
                       sx={{
-                        boxShadow: "none",
-                        "&::before": {
-                          display: "none",
-                        },
                         border: "4px solid var(--color-primary)",
-                        borderRadius: "10px",
                         "&:hover": {
                           borderColor: "var(--color-warning)",
                         },
@@ -188,23 +182,23 @@ export default function ItemView() {
                     >
                       <AccordionSummary
                         expandIcon={<ExpandMore />}
-                        aria-controls="items-list-content"
-                        id="items-list-header"
+                        aria-controls={list.id + "-list-content"}
+                        id={list.id + "-list-header"}
                         className="font-semibold rounded-md"
                         sx={{
                           "&:hover": {
                             color: "var(--color-warning)",
                           },
-                          "&.Mui-expanded": {
-                            minHeight: 36,
-                          },
-                          "& .MuiAccordionSummary-content": { m: 1 },
                         }}
                       >
                         {list.label}
                       </AccordionSummary>
 
-                      <AccordionDetails>
+                      <AccordionDetails
+                        sx={{
+                          paddingTop: 0,
+                        }}
+                      >
                         <motion.ol
                           className="list-disc list-inside"
                           {...variants_list}
@@ -289,7 +283,7 @@ export default function ItemView() {
 
           <motion.section variants={variants_sections}>
             <h2 className="text-lg font-semibold">Ubicación</h2>
-            <motion.ul {...variants_list}>
+            {/* <motion.ul {...variants_list}>
               {Object.entries(OBJ_UBICATION).map(([id, obj]) => {
                 const val = data.ubication?.[id as keyof typeof data.ubication];
                 return val ? (
@@ -307,7 +301,35 @@ export default function ItemView() {
                   </motion.li>
                 ) : null;
               })}
-            </motion.ul>
+            </motion.ul> */}
+
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              {[
+                calle,
+                data.ubication.neighborhood,
+                OBJ_LOCALIDADES[
+                  data.ubication?.department as keyof typeof OBJ_LOCALIDADES
+                ],
+              ]
+                .filter((e) => e !== undefined)
+                .join(", ")}
+            </motion.p>
+
+            {data.ubication.references && (
+              <motion.p
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
+                Referencias: {data.ubication.references}
+              </motion.p>
+            )}
           </motion.section>
 
           {data.tags && (

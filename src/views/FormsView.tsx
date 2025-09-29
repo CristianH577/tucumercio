@@ -1,6 +1,12 @@
 import database from "../assets/database.json";
-import type { TypeCategories, TypeItemDb, TypeSchedule } from "../consts/types";
+import type {
+  TypeCategories,
+  TypeItemDb,
+  TypeOffered,
+  TypeSchedule,
+} from "../consts/types";
 import {
+  LIST_OFFERED,
   OBJ_ATTRIBUTES,
   OBJ_CONTACTS,
   OBJ_LOCALIDADES,
@@ -37,6 +43,7 @@ const fv_add_default: TypeItemDb = {
     desc: "",
     schedule: [],
   },
+  offered: {},
   contact: {},
   ubication: { department: "capital", references: "" },
   attributes: [],
@@ -50,11 +57,6 @@ export default function FormsView() {
     id: "",
     text: "",
   });
-
-  // const types = {};
-  // fvAdd.categorie[0] === "services"
-  //   ? OBJ_TYPES_STORE.services
-  //   : OBJ_TYPES_STORE.products;
 
   const handleSend = () => {
     const fvAdd_ = structuredClone(fvAdd);
@@ -79,6 +81,20 @@ export default function FormsView() {
     if (!fvAdd_.info.logo) delete fvAdd_.info.logo;
 
     if (fvAdd_.ubication.references === "") delete fvAdd_.ubication.references;
+
+    if (fvAdd_.offered) {
+      if (Object.keys(fvAdd_.offered).length < 1) {
+        delete fvAdd_.offered;
+      } else {
+        const offered_: TypeOffered = {};
+        Object.keys(fvAdd_.offered).forEach((key) => {
+          const key_ = key as keyof typeof fvAdd_.offered;
+          const list = fvAdd_.offered && fvAdd_.offered[key_];
+          if (list?.length) offered_[key_] = list;
+        });
+        fvAdd_.offered = offered_;
+      }
+    }
 
     console.log(fvAdd_);
   };
@@ -169,11 +185,11 @@ export default function FormsView() {
               setFvAdd(fvAdd_);
             }}
           />
-          <FormControl>
+          {/* <FormControl>
             <FormLabel htmlFor="select-type-button" id="select-type-label">
               Tipo de negocio
             </FormLabel>
-            {/* <Select
+            <Select
               placeholder="Seleccione"
               name="type"
               slotProps={{
@@ -195,8 +211,8 @@ export default function FormsView() {
                   {val.icon && <val.icon />} {val.label}
                 </Option>
               ))}
-            </Select> */}
-          </FormControl>
+            </Select>
+          </FormControl> */}
 
           <FormLabel>Horarios</FormLabel>
           <InputAddShedule
@@ -279,7 +295,14 @@ export default function FormsView() {
 
           <FormControl>
             <FormLabel>Referencias</FormLabel>
-            <Textarea minRows={2} />
+            <Textarea
+              minRows={2}
+              slotProps={{
+                textarea: {
+                  name: "referencias",
+                },
+              }}
+            />
           </FormControl>
         </article>
       </section>
@@ -351,28 +374,32 @@ export default function FormsView() {
               }}
             />
           </FormControl>
-          {/* <InputAddToList
-            name="items"
-            label="Se ofrece"
-            placeholder="Producto/Servicio"
-            items={fvAdd.info.items || []}
-            onChange={(list) => {
-              const fvAdd_ = structuredClone(fvAdd);
-              fvAdd_.info.items = list;
-              setFvAdd(fvAdd_);
-            }}
-          />
-          <InputAddToList
-            name="itemsNo"
-            label="NO se ofrece"
-            placeholder="Producto/Servicio"
-            items={fvAdd.info.itemsNo || []}
-            onChange={(list) => {
-              const fvAdd_ = structuredClone(fvAdd);
-              fvAdd_.info.itemsNo = list;
-              setFvAdd(fvAdd_);
-            }}
-          /> */}
+
+          {LIST_OFFERED.map((item) => (
+            <InputAddToList
+              key={item.id}
+              name={item.id}
+              label={item.label}
+              placeholder={item.label}
+              items={
+                fvAdd.offered && item.id in fvAdd.offered
+                  ? (fvAdd.offered[
+                      item.id as keyof typeof fvAdd.offered
+                    ] as string[])
+                  : []
+              }
+              onChange={(list) => {
+                const fvAdd_ = structuredClone(fvAdd);
+                if (fvAdd_.offered) {
+                  const id: string = item.id;
+                  // @ts-ignore
+                  fvAdd_.offered[id] = list;
+                }
+                setFvAdd(fvAdd_);
+              }}
+            />
+          ))}
+
           <InputAddToList
             name="tags"
             label="Tags"

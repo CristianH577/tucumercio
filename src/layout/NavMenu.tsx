@@ -24,7 +24,7 @@ export default function NavMenu() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex justify-between gap- sm:gap-4 w-full max-w-[900px] place-self-center">
+      <div className="flex justify-between gap- sm:gap-4 w-full max-w-[1200px] place-self-center">
         <IconButton
           title="Abrir menú"
           className="sm:!hidden"

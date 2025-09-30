@@ -96,7 +96,7 @@ export default function ItemView() {
           <motion.section className="space-y-4" variants={variants_sections}>
             <article className="space-y-2">
               <h2 className="text-lg font-semibold">Sobre el negocio</h2>
-              {data.info.desc && <p className="indent-2">{data.info.desc}.</p>}
+              {data.info.desc && <p className="indent-2">{data.info.desc}</p>}
 
               {schedule && (
                 <div>

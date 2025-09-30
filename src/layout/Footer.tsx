@@ -36,7 +36,7 @@ export default function Footer() {
         animate="visible"
       >
         <Logo
-          className="text-6xl w-fit drop-shadow-sm drop-shadow-black/20 max-sm:self-center max-sm:mb-2 max-[400px]:flex-col"
+          className="text-5xl sm:text-6xl w-fit drop-shadow-sm drop-shadow-black/20 max-sm:self-center max-sm:mb-2 max-[400px]:flex-col"
           classes={{ svg: "h-20 min-[400px]:h-14" }}
         />
 

@@ -48,7 +48,7 @@ export default function ItemsView({
     );
 
   return (
-    <section className="grid xs:grid-cols-[repeat(auto-fit,_minmax(180px,300px))] sm:grid-cols-[repeat(auto-fit,_minmax(180px,300px))] gap-4 lg:gap-8 xs:justify-center mt-4">
+    <section className="grid xs:grid-cols-[repeat(auto-fit,_minmax(180px,300px))] sm:grid-cols-[repeat(auto-fit,_minmax(200px,300px))] gap-4 lg:gap-8 xs:justify-center mt-4">
       {items.map((item) => (
         <MotionLink
           key={item.id}
@@ -62,7 +62,7 @@ export default function ItemsView({
         >
           <CardHeader item={item} />
 
-          <Divider />
+          <Divider variant="middle" />
 
           <p className="capitalize text-sm font-semibold text-center">
             {
@@ -94,21 +94,6 @@ export default function ItemsView({
                     </li>
                   );
                 })}
-                {/* {Object.entries(OBJ_ATTRIBUTES).map(([id, data], i) => {
-                  if (item.attributes?.includes(id) && i < 5) {
-                    return (
-                      <li key={id}>
-                        {data.icon ? (
-                          <Tooltip title={data.label}>
-                            <data.icon />
-                          </Tooltip>
-                        ) : (
-                          <span>{data.label}</span>
-                        )}
-                      </li>
-                    );
-                  }
-                })} */}
                 {item.attributes.length > 5 && (
                   <li>
                     <MoreHorizIcon />
@@ -145,6 +130,8 @@ export default function ItemsView({
               </li>
             )}
           </ol>
+
+          <Divider variant="middle" />
         </MotionLink>
       ))}
     </section>

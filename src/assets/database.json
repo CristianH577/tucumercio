@@ -369,7 +369,7 @@
       "logo": true,
       "type": "store",
       "schedule": [[1, 6, "10:00", "13:00", "17:00", "21:00"]],
-      "desc": "Rock shop🤘 en San Miguel de Tucumán dedicado a los fanáticos del ROCK, METAL Y CULTURA ALTERNATIVA"
+      "desc": "Rock shop🤘 en San Miguel de Tucumán dedicado a los fanáticos del ROCK, METAL Y CULTURA ALTERNATIVA."
     },
     "contact": {
       "whatsapp": {
@@ -420,7 +420,7 @@
       "label": "Nacho Plast",
       "logo": true,
       "type": "store",
-      "desc": "Bazar por mayor y menor",
+      "desc": "Bazar por mayor y menor.",
       "schedule": [
         [1, 5, "09:00", "14:00", "16:30", "20:30"],
         [6, null, "09:00", "14:00", null, null]
@@ -494,7 +494,7 @@
       "label": "Líder 1 sellos",
       "logo": true,
       "type": "store",
-      "desc": "Sellos profesionales y corporativos en el día, seguridad, calidad y garantía",
+      "desc": "Sellos profesionales y corporativos en el día, seguridad, calidad y garantía.",
       "schedule": [[1, 5, "09:00", "13:00", "16:00", "21:00"]]
     },
     "contact": {
@@ -590,7 +590,7 @@
       "label": "Tamarindo Pizzeria",
       "logo": true,
       "type": "entrepreneurship",
-      "desc": "🍕El sabor de lo diferente\nDonde la tradición napolitana se combina con la pasión caribeña🔥\nCatering para eventos.\nEventos cerrados\n📞 Reserva tu fecha"
+      "desc": "🍕El sabor de lo diferente\nDonde la tradición napolitana se combina con la pasión caribeña🔥\nCatering para eventos.\nEventos cerrados\n📞 Reserva tu fecha."
     },
     "contact": {
       "ig": {
@@ -618,7 +618,7 @@
       "label": "Ganez",
       "logo": true,
       "type": "store",
-      "desc": "Venta maquinas y herramientas",
+      "desc": "Venta maquinas y herramientas.",
       "schedule": [
         [1, 4, "09:30", "13:00", "14:00", "18:00"],
         [5, null, "09:30", "13:00", null, null]
@@ -977,7 +977,7 @@
       "label": "Atenor Hno. SRL",
       "logo": true,
       "type": "store",
-      "desc": "Insumos para el agro, la industria y la construcción",
+      "desc": "Insumos para el agro, la industria y la construcción.",
       "schedule": [
         [1, 5, "08:00", "13:00", "16:30", "19:30"],
         [6, null, "08:30", "12:30", null, null]
@@ -1057,7 +1057,7 @@
       "label": "Tucuman Aventura",
       "logo": true,
       "type": "store",
-      "desc": "Somos una empresa dedicada a la venta de artículos deportivos, camping, y accesorios de electrónica",
+      "desc": "Somos una empresa dedicada a la venta de artículos deportivos, camping, y accesorios de electrónica.",
       "schedule": [
         [1, 5, "09:30", "18:30", null, null],
         [6, null, "09:30", "13:30", null, null]
@@ -1161,7 +1161,7 @@
       "label": "Ampere",
       "logo": true,
       "type": "store",
-      "desc": "El especialista de siempre en materiales eléctricos e iluminación",
+      "desc": "El especialista de siempre en materiales eléctricos e iluminación.",
       "schedule": [
         [1, 5, "08:30", "18:00", null, null],
         [6, null, "09:00", "13:00", null, null]
@@ -1484,7 +1484,7 @@
       "label": "Daz Importadora",
       "logo": true,
       "type": "store",
-      "desc": "Mayorista de Tecnología Electrónica Hogar Parlantes Auriculares",
+      "desc": "Mayorista de Tecnología Electrónica Hogar Parlantes Auriculares.",
       "schedule": [
         [1, 5, "09:00", "18:00", null, null],
         [6, null, "10:00", "14:00", null, null]
@@ -1794,7 +1794,7 @@
       "label": "LR Ventas",
       "logo": true,
       "type": "store",
-      "desc": "Empresa dedicada a la distribución de\nSaldo virtual\nCigarrillos\nMayorista de productos para kiosco",
+      "desc": "Empresa dedicada a la distribución de\nSaldo virtual\nCigarrillos\nMayorista de productos para kiosco.",
       "schedule": [[1, 5, "09:00", "17:30", null, null]]
     },
     "contact": {
@@ -1947,7 +1947,7 @@
       "label": "Famiq",
       "logo": true,
       "type": "store",
-      "desc": "🚀 Líderes en comercialización de Acero Inoxidable\n👨🏻‍🏭 Capacítate en los seminarios de Soldadura TIG",
+      "desc": "🚀 Líderes en comercialización de Acero Inoxidable\n👨🏻‍🏭 Capacítate en los seminarios de Soldadura TIG.",
       "schedule": [[1, 5, "08:30", "12:30", "13:30", "17:30"]]
     },
     "contact": {
@@ -2024,7 +2024,7 @@
       "label": "Autino Hierros S.R.L",
       "logo": true,
       "type": "company",
-      "desc": "Empresa con amplia trayectoria en la comercialización de aceros , hierros , chapas , bronce , grilo",
+      "desc": "Empresa con amplia trayectoria en la comercialización de aceros, hierros , chapas, bronce, grilo.",
       "schedule": [[1, 5, "08:00", "12:00", "13:00", "18:00"]]
     },
     "contact": {
